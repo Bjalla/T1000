@@ -1,0 +1,294 @@
+%!TEX root = ../dokumentation.tex
+
+
+\chapter{Rahmenbedingungen}
+
+
+%title wird unter dem Bsp. abgedruckt
+%caption wird im Verzeichnis abgedruckt
+%label wird zum referenzieren benutzt, muss einzigartig sein.
+
+%language ändert die Sprache. (Wenn nur eine Sprache verwendet wird, kann diese Sprache in einstellungen.tex geändert werden. Standardmäßig Java.)
+%\begin{lstlisting}[caption=Python-Code, label=Python-Code, title=Titel des Python-Codes,language=Python]
+%def quicksort(liste):
+%if len(liste) <= 1:
+%	return liste
+%pivotelement = liste.pop()
+%links = [element for element in liste if element < pivotelement]
+%rechts = [element for element in liste if element >= pivotelement]
+%return quicksort(links) + [pivotelement] + quicksort(rechts)
+%# Quelle: http://de.wikipedia.org/wiki/Python_(Programmiersprache)
+%\end{lstlisting}
+
+\section{IBM Connections}
+\large
+
+\newpage
+
+
+\section{IBM Connections Seedlists}
+\large
+IBM Connections stellt für den Abruf von Informationen sogenannte Seedlists zur Verfügung \cite{conn2}. Diese beinhalten sowohl die geschriebenen Daten und Ersteller als auch Meta-Daten wie IDs, Ratings, Anzahl der Besuche oder Tags \cite{resp}. 
+
+Wenn man sich die XML-Antwort von Connections ansieht, stellt man fest, dass diese ein XML-Dokument ist und viele Informationen bereitstellt: \\
+
+\noindent
+\begin{minipage}{\linewidth}
+\begin{lstlisting}[title=Auszug aus einer XML-Antwort von der Connections Blogs-Applikation, language=XML]
+<atom:title>Random Testblog</atom:title>
+<atom:updated>2017-04-13T07:55:17-05:00</atom:updated>
+<wplc:action do="update"/>
+<wplc:acls>
+	<wplc:acl>public</wplc:acl>
+	<wplc:acl>72e36648-5318-1035-8bbe-37aeff8b25b5</wplc:acl>
+</wplc:acls>
+<wplc:field id="FIELD_ENTRY_TYPE">application/blog</wplc:field>
+<wplc:field id="FIELD_BLOG_HANDLE">random</wplc:field>
+<wplc:field id="FIELD_PUBLISH_DATE">2017-03-30T03:35:35-05:00</wplc:field>
+<wplc:field id="FIELD_RATING">0</wplc:field>
+<wplc:field id="FIELD_VISITS">43</wplc:field>
+<wplc:field id="FIELD_TAG">test2</wplc:field>
+<wplc:field id="FIELD_TAG">test3</wplc:field>
+<wplc:field id="FIELD_BLOG_ENTRIES_COUNT">3</wplc:field>
+<wplc:field id="FIELD_COMMENTS_COUNT">3</wplc:field>
+\end{lstlisting}
+\end{minipage}
+
+Hier sind unter anderem Informationen über getätigte Aktionen wie zum Beispiel ein Update (siehe Zeile 3) oder auch das Löschen sowie Informationen über die Anzahl der Besuche (Zeile 12), Tags (Zeilen 13 und 14) oder die Anzahl der Einträge und Kommentare (Zeilen 15 und 16) zu finden.
+
+Eine Seedlist kann aus mehreren Seiten bestehen, wenn es zu viele Einträge gibt. Ist dies der Fall, so gibt es eine Folge-URL, die zur nächsten Seedlist-Seite führt. \\
+\begin{lstlisting}[title=Darstellung der Folge-URL in der Seedlist]
+<atom:link href="https://ic55felixdev.ibm-sba.com/blogs/seedlist/myserver?Action=GetDocuments&Range=100&Start=1&Source=com.ibm.ilel.seedlist.retriever.connections.blogs.BlogsRetrieverFactory&Format=atom&Locale=en_US&State=MTsxNDk3ODcyMDE0Mjg5OzA7MTUwMzMxODA1MzU1Mjt0cnVlOzA7MA%3D%3D" rel="next" type="application/atom+xml" title="Next page"/>
+\end{lstlisting}
+
+Die letzte Seite jeder Seedlist enthält keinerlei weitere Informationen und keine Folge-URLs. Stattdessen findet man dort einen codierten Timestamp, der eine Information darüber enthält, wann diese Seedlist angefordert wurde. \\
+
+\noindent
+\begin{minipage}{\linewidth}
+\begin{lstlisting}[title=Beispiel eines Timestamps: AAABXgS9ErA, language=XML]
+<wplc:timestamp isPartial="false">AAABXgS9ErA=</wplc:timestamp>
+\end{lstlisting}
+\end{minipage}
+
+Dieser wird bei dem wiederholten Sammeln der Daten relevant. In diesem Fall gibt man den Timestamp als Parameter der URL mit. Die Seedlist enthält dann nicht die gesamte Menge an Daten, sondern nur die Veränderungen, die sich seit der Erstellung des Timestamps ergeben haben. Da in diesem Kontext häufig mit sehr großen Datenmengen umgegangen wird, bedeutet dieses Verhalten der Seedlists eine erhebliche Zeitersparnis bei der Aktualisierung und Instandhaltung der Daten.
+
+
+\newpage
+
+\section{Web-Crawling}
+\large
+Ein Web-Crawler (auch Web-Spider genannt) ist ein Programm, welches automatisch allen Links auf einer Webseite folgt und den Inhalt der Seiten herunterlädt. Das größte Anwendungsgebiet für Web-Crawler sind Suchmaschinen. Diese nutzen die Crawler, um Webseiten zu finden und zu speichern, um anschließend den Inhalt zu indexieren. Mit Hilfe dieser Indizes können Suchmaschinen die passenden Webseiten für den Benutzer herausfiltern \cite{crawl}.
+
+Web-Crawler können für ganz unterschiedliche Zwecke eingesetzt werden. Je nach Verwendung liegt der Fokus beim indexieren der Seiten anders. Bei Suchmaschinen werden häufig alle Elemente einer Seite untersucht und indexiert. Crawler für Preisvergleich-Portale filtern nur die relevanten Informationen über Produkte und Preise. Eine weitere Möglichkeit, diese Programme zu verwenden, ist sie als Analyse-Tools nach Besucheranzahlen oder Links, die von anderen Seiten auf die Eigene führen, suchen zu lassen. Eine andere Art der Verwendung, die häufig in Spam-Mails resultiert, lässt die Crawler ausschließlich E-Mail-Adressen indexieren \cite{ryte}.
+
+Um einen Web-Crawler in Betrieb zu nehmen, benötigt dieser eine oder mehrere Ausgangs-URLs. Sie bilden den Startpunkt für den Crawler und sollten zu Webseiten gehören, auf denen weitere URLs zu finden sind. Anderenfalls kann der Crawler nur eine kleine Anzahl an Webseiten untersuchen, da er keine neuen Links mehr findet \cite{how}. 
+
+
+\newpage
+
+\section{XML}
+\large
+Bei der \ac{XML} handelt es sich um einen Standard, nach dessen Vorgaben Online-Dokumente erstellt werden können. Es ist eine Unterart der \ac{SGML} \cite{xmldef}. Ein Dokument, welches mit einer Markup Language erstellt wurde, besteht aus Tags. Diese bestimmen die Art und die Formatierung eines Elements \cite{markup}. \ac{XML} heißt \textit{Extensible}, da im Gegensatz zu \ac{HTML}, einer anderen für Online-Dokumente verwendete Markup Language, eigene Tags erstellt und verwendet werden können. Solche Tags können über die Art und Formatierung hinaus auch den Sinngehalt des Inhalts festhalten \cite{xmldef}.
+
+So könnte die Darstellung eines Produktes mit \acs{HTML} aussehen: \\
+\begin{lstlisting}[title=Beispiel-Code HTML, language=HTML]
+<p>Rotes Kissen<br>Kissen-Laden<br>10 Euro<\p>
+\end{lstlisting}
+
+Im Vergleich dazu mit \ac{XML}: \\
+
+\begin{lstlisting}[title=Beispiel-Code XML, language=XML, morekeywords={produkt, modell, verkaeufer, preis}]
+<produkt>
+	<modell>Rotes Kissen><\modell>
+	<verkaeufer>Kissen-Laden<\verkaeufer>
+	<preis>10 Euro<\preis>
+<\produkt>
+\end{lstlisting}
+
+Das Element \textit{produkt} wird hierbei als Eltern-Element von \textit{modell, verkaeufer} und \textit{preis} bezeichnet. Die letzten genannten Elemente heißen Kind-Elemente von \textit{produkt}.
+ 
+Da die XML-Tags vom Ersteller des Dokuments selbst gewählt werden können, kann es bei der Verwendung von Code aus verschiedenen \ac{XML}-Anwendungen  zu Überschneidungen in der Namenswahl kommen. Für Menschen ist der Unterschied durch den Kontext erkennbar. Eine Maschine jedoch kennt die Bedeutung der Worte nicht und kann daher keinen Unterschied feststellen. Ein Beispiel\footnote{Beispiel von w3schools.org \cite{w3s}}: \\
+
+\begin{lstlisting}[title=Beispiel Überschneidung von \ac{XML}-Bezeichnern, language=XML,  morekeywords={table, tr, td, name, width, length}]
+<table>
+	<tr>
+		<td>Apples</td>
+		<td>Bananas</td>
+	</tr>
+</table>
+
+
+<table>
+	<name>African Coffee Table</name>
+	<width>80</width>
+	<length>120</length>
+</table>
+\end{lstlisting}
+
+In beiden Abschnitten heißt der einleitende Tag \textit{table}, jedoch ist jeweils etwas unterschiedliches gemeint. Im ersten Teil handelt es sich um eine Tabelle, während im zweiten ein Tisch beschrieben werden soll. Um Klarheit zu schaffen und die beiden Elemente unterscheiden zu können, verwendet man Präfixe. \\
+
+\begin{lstlisting}[title=Lösung des Namenskonfliktes durch Verwendung der Präfixe \textit{h:} und \textit{f:}, language=XML,  morekeywords={h:table, h:tr, h:td, f:name, f:width, f:length, f:table}]
+<h:table>
+	<h:tr>
+		<h:td>Apples</h:td>
+		<h:td>Bananas</h:td>
+	</h:tr>
+</h:table>
+
+
+<f:table>
+	<f:name>African Coffee Table</f:name>
+	<f:width>80</f:width>
+	<f:length>120</f:length>
+</f:table>
+\end{lstlisting}
+
+Auf diese Art können innerhalb eines Dokuments Elemente mit dem gleichen Namen unterschieden werden. Um jedoch eine universelle Einzigartigkeit eines Elements sicherzustellen, verwendet man sogenannte \textit{namespaces} (Namensräume). Ein Namespace wird in Form eines \acp{URI} hinterlegt. Dabei kann es sich sowohl um einen \ac{URL} oder einen \ac{URN} handeln. \ac{XML} ist case-sensitive, das heißt die Groß- und Kleinschreibung der Bezeichner macht einen Unterschied bei der Auswertung des Codes. Bei vielen \ac{XML}-Parsern erzeugt ein nicht vorhandener Namespace einen Fehler.
+Um einen Namespace zu hinterlegen, verwendet man das \textit{xmlns} Attribut im öffnenden Tag eines Elements \cite{undxml}. \\ 
+
+\begin{lstlisting}[title=Verwendung von \textit{namespaces} Möglichkeit 1, language=XML, morekeywords={h:table, xmlns:h, h:tr, h:td, f:table, xmlns:f, f:name, f:width, f:length}]
+<h:table xmlns:h="http://www.w3.org/TR/html4/">
+	<h:tr>
+		<h:td>Apples</h:td>
+		<h:td>Bananas</h:td>
+	</h:tr>
+</h:table>
+
+<f:table xmlns:f="https://www.w3schools.com/furniture">
+	<f:name>African Coffee Table</f:name>
+	<f:width>80</f:width>
+	<f:length>120</f:length>
+</f:table>
+\end{lstlisting}
+
+Um für einen Bereich mehrere Namespaces zu hinterlegen, kann man dies in einem übergeordneten Tag tun. \\
+
+\begin{lstlisting}[title=Verwendung von \textit{namespaces} Möglichkeit 2, language=XML, morekeywords={h:table, xmlns:h, h:tr, h:td, f:table, xmlns:f, f:name, f:width, f:length, root}]
+<root xmlns:h="http://www.w3.org/TR/html4" xmlns:f="https://www.w3schools.com/furniture">
+
+	<h:table>
+		<h:tr>
+			<h:td>Apples</h:td>
+			<h:td>Bananas</h:td>
+		</h:tr>
+	</h:table>
+
+	<f:table>
+		<f:name>African Coffee Table</f:name>
+		<f:width>80</f:width>
+		<f:length>120</f:length>
+	</f:table>
+</root>
+\end{lstlisting}
+
+Um nicht vor jedes Element einen Präfix schreiben zu müssen, kann man den \textit{namespace} in dem Eltern-Element als sogenannten \textit{default namespace} (Standard Namespace) festlegen. Dafür wird wieder das \textit{xmlns} Attribut verwendet, jeoch bekommt dieses keinen Namen. Stattdessen wird die \ac{URI} direkt dem Attribut zugewiesen. \\
+
+\begin{lstlisting}[title=Verwendung von \textit{namespaces} Möglichkeit 3, language=XML, morekeywords={h:table, xmlns, tr, td, table, xmlns, name, width, length}]
+<table xmlns="http://www.w3.org/TR/html4/">
+	<tr>
+		<td>Apples</td>
+		<td>Bananas</td>
+	</tr>
+</table> 
+
+<table xmlns="https://www.w3schools.com/furniture">
+	<name>African Coffee Table</name>
+	<width>80</width>
+	<length>120</length>
+</table>
+\end{lstlisting}
+
+XML ist ein für Menschen sehr verständlicher Standard. Allerdings kann ein Computer die Zusammenhänge aus dem Dokument nicht so leicht herstellen. Aus diesem Grund muss \ac{XML}, damit die Informationen von einer Maschine weiterverwendet werden können, zunächst geparsed werden. Ein Parser hat hierbei die Aufgabe, die Informationen aus dem \ac{XML}-Dokument zu extrahieren. Man unterscheidet dabei nach \textit{validating} und \textit{non-validating} Parsern. Erstere extrahieren nicht nur Informationen, sondern überprüfen auch gleichzeitig die Korrektheit des \ac{XML}-Codes und ob alle Formalien eingehalten werden \cite{pars}. Es gibt bereits viele \ac{XML}-Parser, die online zur Verfügung gestellt werden. Im JavaScript-Umfeld verwendet man den DOMParser, der mit der Methode \texttt{parseFromString} das \ac{XML}-Dokument in ein \textit{Document-Object Model} umwandelt. Daraus kann man mit Hilfe von simplem JavaScript die Informationen weiterverarbeiten \cite{w3pars}. \\
+
+\begin{lstlisting}[title=Verwendung des DOMParsers für XML, language=JavaScript]
+var text, parser, doc, result; // Variablendeklaration
+
+text = "<table><name>African Coffee Table</name><width>80</width><length>120</length></table>"; // der zu parsende Text
+
+parser = new DOMParser(); // ein neues DOMParser-Objekt wird instanziiert
+doc = parser.parseFromString(text, "text/xml");
+
+result = {
+	table: {
+		name: doc.getElementsByTagName("name")[0].childNodes[0].nodeValue,
+		width: doc.getElementsByTagName("width")[0].childNodes[0].nodeValue,
+		length: doc.getElementsByTagName("length")[0].childNodes[0].nodeValue
+	}
+} // Informationen in JSON-Format bringen
+\end{lstlisting}
+
+Das Ergebnis diese Codes ist ein JSON-Objekt, welches man weiterverarbeiten kann. \\
+
+\begin{lstlisting}[title=Ergebnis nach dem Parsen, language=JavaScript]
+{
+	table: {
+		name: 'African Coffee Table',
+		width: '80',
+		length: '120'
+	}
+}
+\end{lstlisting}
+
+
+
+\newpage
+
+\section{Node.js und asynchrone Programmierung}
+\large
+Im Allgemeinen kann man Node.js als server-seitiges JavaScript bezeichnen. Es bietet eine Möglichkeit, JavaScript direkt auf einem Computer auszuführen, statt dies nur in einem Browser zu tun \cite{njsspec}. Darüber hinaus besitzt Node.js einige Eigenschaften, die im Folgenden etwas erläutert werden sollen.
+
+Ein Hilfsmittel für das Arbeiten mit Node.js ist der \textit{\ac{npm}}. Dieser ermöglicht es, sogenannte \textit{Packages} oder auch \textit{Module} im eigenen Code zu verwenden. Dafür muss zunächst der \ac{npm} installiert sein. Danach können mit dem Kommandozeilenbefehl \texttt{npm install <package name>} die einzelnen Packages installiert werden. Um diese dann zu verwenden müssen sie in der JavaScript-Datei mit dem folgenden Code hinzugefügt werden: \\
+
+\begin{lstlisting}[title=Verwendung des Filesystem-packages (fs) mit dem \texttt{require}-Befehl, language=JavaScript]
+var fs = require('fs');
+\end{lstlisting}
+
+Einige Packages wie das Filesystem-Package sind bereits vorinstalliert und müssen nicht mit dem \ac{npm} heruntergeladen, sondern nur mit \texttt{require} in das Programm eingebunden werden \cite{npm}.
+Weiterhin besteht die Möglichkeit, eigene Packages zu erstellen. Dafür exportiert man einzelne Funktionen, indem man am Ende des gewünschten Codes folgende Zeilen schreibt \cite{npmm}: \\
+
+\begin{lstlisting}[title=Beispiel für den Export von Funktionen, language=JavaScript]
+module.exports = {
+	exampleFunction1,
+	exampleFunction2
+}
+\end{lstlisting}
+
+Node.js hat den Vorteil, dass damit \textit{non-blocking} (nicht-blockierender) Code erstellt werden kann. Das Prinzip von non-blocking Code kann auf Funktionen angewandt werden, bei denen keine JavaScript-Prozesse ausgeführt werden (z. B. Daten einlesen oder Datenbankabfragen). Da solche Prozesse vor allem bei großen Datenmengen mehrere Sekunden oder sogar Minuten brauchen können, sollten diese Art von Anfragen nicht den Programmfluss aufhalten. Wenn zum Beispiel eine große Menge an Daten aus einer Datei eingelesen werden soll, würde das Programm mit \textit{blocking} (blockierendem) Code so lange stehenbleiben, bis der Vorgang abgeschlossen ist. Erst danach würden die nachfolgenden Anweisungen ausgeführt werden.
+Mit non-blocking Code kann man den Programmablauf insgesamt beschleunigen. Das Programm wird nicht auf das Ende der Datenabfrage warten und in der Zeit die nachfolgenden Anweisungen ausführen, bis die Daten vollständig eingelesen sind \cite{njsbloc}. \\
+
+ \begin{lstlisting}[title=Blocking Code bei dem Einlesen einer Datei, language=JavaScript]
+const fs = require('fs');
+const data = fs.readFileSync('filename.txt');
+
+console.log('Hello World');
+console.log('Bye World');
+\end{lstlisting}
+
+In diesem Beispiel wird zunächst die Datei eingelesen und erst danach die beiden Log-Statements ausgeführt. Im Gegensatz dazu der non-blocking Code: \\
+
+\noindent
+\begin{minipage}{\linewidth}
+\begin{lstlisting}[title=Non-blocking Code beim Einlesen einer Datei, language=JavaScript]
+const fs = require('fs');
+
+data = fs.readFileSync('filename.txt', function (err, data) => {
+	if (err) {
+		throw err;  //Fehlerbehandlung
+	}
+
+	console.log('Hello World');
+});
+
+console.log('Bye World');
+
+\end{lstlisting}
+\end{minipage}
+
+In diesem Beispiel wird der Lese-Vorgang angestoßen. Während das Programm auf eine Antwort der \texttt{readFileSync} Methode wartet, wird das \texttt{'Bye World'} Log-Statement ausgeführt. Sobald die Datei komplett eingelesen ist, wird das \texttt{'Hello World'} Log-Statement ausgeführt. Im Gegensatz zum blocking Code wurde hier der Methode nicht nur ein Dateiname, sondern auch eine Funktion als Parameter mitgegeben. Diese Funktion heißt allgemein auch \textit{Callback-Funktion}. Sobald der Leseprozess abgeschlossen ist, wird diese ausgeführt.
+
+Bei non-blocking Code sagt man auch, dass dieser \textit{asynchron} ausgeführt wird, während blocking Code \textit{synchron} arbeitet.
+
+%asynchronous, non--blocking, single-threaded, event-driven, event loop
+
+
+

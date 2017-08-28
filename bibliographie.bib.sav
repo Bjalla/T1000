@@ -1,0 +1,142 @@
+% Encoding: UTF-8
+
+@Online{conn,
+  author = {IBM},
+  title  = {IBM Connections 5.5 API Documentation},
+  year   = {2016},
+  url    = {https://www-10.lotus.com/ldd/lcwiki.nsf/xpAPIViewer.xsp?lookupName=IBM+Connections+5.5+API+Documentation#action=openDocument&content=catcontent&ct=api},
+}
+
+@Online{conn2,
+  author = {IBM},
+  title  = {IBM Connections Integration},
+  url    = {https://www.ibm.com/support/knowledgecenter/SSYJ99_8.0.0/overview/lotus_connections_integration.html},
+}
+
+@Online{resp,
+  author = {IBM},
+  title  = {Seedlist Response},
+  year   = {2014},
+  url    = {https://www-10.lotus.com/ldd/lcwiki.nsf/xpAPIViewer.xsp?lookupName=IBM+Connections+5.5+API+Documentation#action=openDocument&res_title=Seedlist_response_ic55&content=apicontent},
+}
+
+@Article{crawl,
+  author       = {Salim Khalil and Mohamed Fakir},
+  title        = {RCrawler: An R package for parallel web crawling and scraping},
+  journaltitle = {SoftwareX Volume 6},
+  year         = {2017},
+}
+
+@Online{how,
+  author = {Promptcloud},
+  title  = {How a Web Crawler Works: Insights into a Modern Web Crawler},
+  url    = {https://www.promptcloud.com/how-web-crawler-works/},
+}
+
+@Online{ryte,
+  author = {Ryte},
+  title  = {Crawler},
+  url    = {https://en.ryte.com/wiki/Crawler},
+}
+
+@Online{xmldef,
+  author = {Springer Gabler Verlag (Herausgeber)},
+  title  = {Gabler Wirtschaftslexikon, Stichwort: XML},
+  url    = {http://wirtschaftslexikon.gabler.de/Archiv/75488/xml-v11.html},
+}
+
+@Online{markup,
+  author = {Springer Gabler Verlag (Herausgeber)},
+  title  = {Gabler Wirtschaftslexikon, Stichwort: SGML},
+  url    = {http://wirtschaftslexikon.gabler.de/Archiv/75599/sgml-v8.html},
+}
+
+@Article{w3xml,
+  author       = {Tim Bray and Jean Paoli and C. M. Sperberg-McQueen and Eve Maler and Francois Yergeau and John Cowan},
+  title        = {Extensible Markup Language (XML), Deutsche Übersetzung},
+  journaltitle = {W3C},
+  year         = {2006},
+}
+
+@Online{w3s,
+  author = {w3schools},
+  title  = {XML Namespaces},
+  url    = {https://www.w3schools.com/xml/xml_namespaces.asp},
+}
+
+@Article{undxml,
+  author       = {Aaron Skonnard},
+  title        = {Understanding XML Namespaces},
+  journal      = {https://msdn.microsoft.com/en-us/library/aa468565.aspx},
+  journaltitle = {MSDN Magazine},
+  year         = {2011},
+}
+
+@Online{pars,
+  author = {Darla Ferrara},
+  editor = {Jeremy Girard},
+  title  = {All About XML Parsers - What Do XML Parsers Do},
+  url    = {http://webdesign.about.com/od/parsers/a/all-about-xml-parsers.htm},
+}
+
+@Online{w3pars,
+  author = {w3schools},
+  title  = {XML Parser},
+  url    = {https://www.w3schools.com/xml/xml_parser.asp},
+}
+
+@Book{profnjs,
+  author = {Pedro Teixeira},
+  title  = {Professional Node.js: Building Javascript Based Scalable Software},
+  year   = {2012},
+  date   = {01.10.2012},
+}
+
+@Book{smash,
+  author = {Guillermo Rauch},
+  title  = {Smashing Node.js: JavaScript Everywhere},
+  year   = {2012},
+  date   = {154.08.2012},
+}
+
+@Article{njspar,
+  author = {Robert Ryan McCune},
+  title  = {Node.js Paradigms and Benchmarks},
+}
+
+@Online{w3njs,
+  author = {w3schools},
+  title  = {Node.js Introduction},
+  url    = {https://www.w3schools.com/nodejs/nodejs_intro.asp},
+}
+
+@Online{njsab,
+  author = {Node.js Foundation},
+  title  = {About Node.js},
+  url    = {https://nodejs.org/en/about/},
+}
+
+@Online{njsspec,
+  author = {Aziz Ali},
+  year   = {2015},
+  url    = {https://ilovecoding.org/lessons/whats-special-about-nodejs},
+}
+
+@Online{njsbloc,
+  author = {Node.js Foundation},
+  title  = {Overview of Blocking vs. Non-Blocking},
+  url    = {https://nodejs.org/en/docs/guides/blocking-vs-non-blocking/},
+}
+
+@Online{npm,
+  author = {npm},
+  title  = {What is npm?},
+  url    = {https://docs.npmjs.com/getting-started/what-is-npm},
+}
+
+@Online{npmm,
+  author = {npm},
+  url    = {https://docs.npmjs.com/getting-started/creating-node-modules},
+}
+
+@Comment{jabref-meta: databaseType:biblatex;}
