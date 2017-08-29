@@ -86,7 +86,7 @@ Um einen Web-Crawler in Betrieb zu nehmen, benötigt dieser eine oder mehrere Au
 
 \newpage
 
-\section{XML}
+\section{XML und XML-Parser}
 \large
 Bei der \ac{XML} handelt es sich um einen Standard, nach dessen Vorgaben Online-Dokumente erstellt werden können. Es ist eine Unterart der \ac{SGML} \cite{xmldef}. Ein Dokument, welches mit einer Markup Language erstellt wurde, besteht aus Tags. Diese bestimmen die Art und die Formatierung eines Elements \cite{markup}. \ac{XML} heißt \textit{Extensible}, da im Gegensatz zu \ac{HTML}, einer anderen für Online-Dokumente verwendete Markup Language, eigene Tags erstellt und verwendet werden können. Solche Tags können über die Art und Formatierung hinaus auch den Sinngehalt des Inhalts festhalten \cite{xmldef}.
 
@@ -271,7 +271,7 @@ In diesem Beispiel wird zunächst die Datei eingelesen und erst danach die beide
 \begin{lstlisting}[title=Non-blocking Code beim Einlesen einer Datei, language=JavaScript]
 const fs = require('fs');
 
-data = fs.readFileSync('filename.txt', function (err, data) => {
+data = fs.readFileSync('filename.txt', function (err, data) {
 	if (err) {
 		throw err;  //Fehlerbehandlung
 	}
@@ -289,6 +289,37 @@ In diesem Beispiel wird der Lese-Vorgang angestoßen. Während das Programm auf 
 Bei non-blocking Code sagt man auch, dass dieser \textit{asynchron} ausgeführt wird, während blocking Code \textit{synchron} arbeitet.
 
 Das Prinzip der asynchronen Abarbeitung von Code kann beliebig kompliziert angewandt werden. Problematisch wird dabei jedoch die Fehlerbehandlung und die vielen Callback-Funktionen. Aus diesem Grund gibt es \textit{Promises}. Sie ermöglichen die asynchrone Arbeitsweise und halten den Code dabei vergleichsweise einfach. Im Allgemeinen repräsentieren Promises das Ergebnis eines asynchronen Prozesses. Dabei können sie einen von drei Zuständen haben: \textit{pending} (ausstehend), \textit{fulfilled} (erfüllt) und \textit{rejected} (abgelehnt). Ihr ursprünglicher Zustand ist dabei pending. Wird eine asynchrone Operation ausgeführt, verändert sich der Status entweder zu fulfilled oder rejected. Wird einer dieser beiden Zustände erreicht, kann er für dieses Promise nicht mehr geändert werden \cite{prom}.
+
+Eine grundlegende Methode von Promises ist die \texttt{then}-Methode. Diese nimmt zwei Funktionen als Parameter entgegen, den ersten für den Fall, dass das Promise fulfilled wird (\textit{onFulfilled}) und den anderen für den Fall, dass es rejected wird (\textit{onRejected}). Somit werden auch Fehler abgefangen. Wird das Promise fulfilled, wird die onFulfilled-Funktion ausgeführt und das Ergebnis des Promises wird der erste Parameter dieser Funktion. Wird das Promise jedoch rejected, wird die onRejected-Funktion mit dem Grund für die Ablehnung des Promises als ersten Paramter ausgeführt \cite{proma}.
+
+Ein einfaches Beispiel für asynchrone Funktionen ohne Promises: \\
+
+\begin{lstlisting}[title=Asynchrone Funktion ohne Promises, language=JavaScript]
+readFile (function (err, data) {
+	if (err) {
+		return console.error(err);
+	}
+	console.log(data);
+\end{lstlisting}
+
+Das gleiche Ergebnis kann mit einfacherer Fehlerbehandlung mit Promises erreicht werden: \\
+
+\begin{lstlisting}[title=Asynchrone Funktion mit Promises, language=JavaScript]
+	var promise = readFile(filename);
+	promise.then(console.log, console.error);
+}
+\end{lstlisting}
+
+In diesem Beispiel soll eine Datei eingelesen (\texttt{readFile}) und mit dem Ergebnis in der Konsole ausgegeben werden. Daher wird der \texttt{then}-Methode die \texttt{console.log}-Funktion als ersten Parameter mitgegeben, da diese ausgeführt werden soll, wenn das Promise fulfilled ist. Sie bearbeitet das Ergebnis von \texttt{readFile} weiter, da sie es automatisch als Parameter zugewiesen bekommt.
+
+%TODO: Q Promises
+
+Die Möglichkeit von asynchronen Funktionen hilft, eine Art Multithreading zu simulieren, da JavaScript dieses nicht unterstützt. Node.js ist durch die \textit{Event Loop} (Ereignis-Schleife) in der Lage, asynchrone Funktionen umzusetzen, indem gewisse Aufgaben an den Kernel abgegeben werden. Heutzutage sind die meisten Kernel fähig, mehrere Threads gleichzeitig laufen zu lassen, weshalb Node.js auch mehrere Aufgaben gleichzeitig abgeben kann. Die Event-Loop sorgt dann dafür, dass keine Aufgaben vergessen werden und so bald wie möglich weitergeführt werden.
+
+Die Event-Loop kann in sechs Phasen unterteilt werden.\\ \\
+\textbf{Timers}:\\
+In dieser Phase werden zunächst alle offenen Callbacks von Timer-Funktionen wie \texttt{setTimeout()} oder \texttt{setInterval()} abgearbeitet. Dabei ist es möglich, dass die festgelegte Dauer nicht der tatsächlichen entsrpricht. Da Node.js verschiedene Phasen durchläuft und in jeder andere Aufgaben abarbeitet, ist es möglich, dass eine solche Ereignis-Schleife in einer kürzeren Zeit als der vom Timer angesetzten komplett ist. Dann wird der Callback des Timers noch nicht ausgeführt. Jetzt ist kann es passieren, dass der nächste Durchlauf der Event Loop länger dauert und zum Beispiel bei der Hälfte die Zeit des Timers abgelaufen ist. An dieser Stelle wird Node.js nicht zur Timers-Phase zurückspringen, sondern die Event Loop zuende führen und sich im nächsten Durchlauf um die Timer kümmern. Das bedeutet, dass wenn eine Funktion einen Timer hat, der 100 ms warten soll, und danach weiterarbeiten soll, kann es sein, dass die nachfolgenden Aufgaben nicht wie gewünscht 100 ms, sondern möglicherweise 105 ms verzögert ausgeführt werden. \\
+
 
 %single-threaded, event-driven, event loop
 

@@ -153,4 +153,15 @@
   url    = {https://developer.ibm.com/node/2016/08/24/promises-in-node-js-an-alternative-to-callbacks/},
 }
 
+@Online{proma,
+  title = {Promises/A+},
+  url   = {https://promisesaplus.com/},
+}
+
+@Online{njsel,
+  author = {Node.js Foundation},
+  title  = {The Node.js Event Loop, Timers, and process.nextTick()},
+  url    = {https://nodejs.org/en/docs/guides/event-loop-timers-and-nexttick/#the-node-js-event-loop-timers-and-process-nexttick},
+}
+
 @Comment{jabref-meta: databaseType:biblatex;}
