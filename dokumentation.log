@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.18 (MiKTeX 2.9.6350 64-bit) (preloaded format=pdflatex 2017.6.26)  28 AUG 2017 17:02
+This is pdfTeX, Version 3.14159265-2.6-1.40.18 (MiKTeX 2.9.6350 64-bit) (preloaded format=pdflatex 2017.6.26)  29 AUG 2017 09:50
 entering extended mode
 **C:/Users/IBM_ADMIN/Documents/Uni/T1000/latexVorlage-master/dokumentation.tex
 (C:/Users/IBM_ADMIN/Documents/Uni/T1000/latexVorlage-master/dokumentation.tex
@@ -2784,18 +2784,18 @@ Package acronym Warning: Acronym `npm' is not defined on input line 246.
 LaTeX Warning: Citation 'npm' on page 12 undefined on input line 246.
 
 
-LaTeX Warning: Citation 'npmm' on page 12 undefined on input line 248.
+LaTeX Warning: Citation 'npmm' on page 12 undefined on input line 247.
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 248--249
+Underfull \hbox (badness 10000) in paragraph at lines 246--248
 
  []
 
 
-LaTeX Warning: Citation 'njsbloc' on page 12 undefined on input line 258.
+LaTeX Warning: Citation 'njsbloc' on page 12 undefined on input line 257.
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 257--259
+Underfull \hbox (badness 10000) in paragraph at lines 256--258
 
  []
 
@@ -2803,41 +2803,54 @@ Underfull \hbox (badness 10000) in paragraph at lines 257--259
 Overfull \vbox (7.89444pt too high) has occurred while \output is active []
 
 Package babel Info: Redefining german shorthand "f
-(babel)             in language  on input line 259.
+(babel)             in language  on input line 258.
 Package babel Info: Redefining german shorthand "|
-(babel)             in language  on input line 259.
+(babel)             in language  on input line 258.
 Package babel Info: Redefining german shorthand "~
-(babel)             in language  on input line 259.
+(babel)             in language  on input line 258.
 Package babel Info: Redefining german shorthand "f
-(babel)             in language  on input line 259.
+(babel)             in language  on input line 258.
 Package babel Info: Redefining german shorthand "|
-(babel)             in language  on input line 259.
+(babel)             in language  on input line 258.
 Package babel Info: Redefining german shorthand "~
-(babel)             in language  on input line 259.
+(babel)             in language  on input line 258.
 
 [12]
-Underfull \hbox (badness 10000) in paragraph at lines 268--269
+Underfull \hbox (badness 10000) in paragraph at lines 267--268
 
  []
 
 
-! LaTeX Error: \begin{minipage} on input line 271 ended by \end{minpage}.
+Overfull \hbox (11.74983pt too wide) in paragraph at lines 269--286
+$[]$ 
+ []
 
-See the LaTeX manual or LaTeX Companion for explanation.
-Type  H <return>  for immediate help.
- ...                                              
-                                                  
-l.286 \end{minpage}
-                   
+
+Overfull \vbox (7.89444pt too high) has occurred while \output is active []
+
+Package babel Info: Redefining german shorthand "f
+(babel)             in language  on input line 288.
+Package babel Info: Redefining german shorthand "|
+(babel)             in language  on input line 288.
+Package babel Info: Redefining german shorthand "~
+(babel)             in language  on input line 288.
+Package babel Info: Redefining german shorthand "f
+(babel)             in language  on input line 288.
+Package babel Info: Redefining german shorthand "|
+(babel)             in language  on input line 288.
+Package babel Info: Redefining german shorthand "~
+(babel)             in language  on input line 288.
+
+[13]
+! Extra }, or forgotten \endgroup.
+l.291 ...usstehend), \textit{fulfilled} (erfüllt}
+                                                   und \textit{rejected} (ab...
+
 ? 
+
+LaTeX Warning: Citation 'prom' on page 14 undefined on input line 291.
+
 )
-! Missing } inserted.
-<inserted text> 
-                }
-l.92 	}
-       
-? 
-
 Overfull \vbox (7.89444pt too high) has occurred while \output is active []
 
 Package babel Info: Redefining german shorthand "f
@@ -2853,7 +2866,7 @@ Package babel Info: Redefining german shorthand "|
 Package babel Info: Redefining german shorthand "~
 (babel)             in language  on input line 94.
 
-[13]
+[14]
 
 LaTeX Warning: Empty bibliography on input line 98.
 
@@ -2874,7 +2887,7 @@ Package babel Info: Redefining german shorthand "|
 Package babel Info: Redefining german shorthand "~
 (babel)             in language  on input line 104.
 
-[14
+[15
 
 
 
@@ -2899,7 +2912,7 @@ Package babel Info: Redefining german shorthand "|
 (babel)             in language  on input line 17.
 Package babel Info: Redefining german shorthand "~
 (babel)             in language  on input line 17.
-[15
+[16
 
 
 ])
@@ -2920,7 +2933,7 @@ Package babel Info: Redefining german shorthand "|
 Package babel Info: Redefining german shorthand "~
 (babel)             in language  on input line 108.
 
-[16]
+[17]
 Package atveryend Info: Empty hook `BeforeClearDocument' on input line 108.
 Package atveryend Info: Empty hook `AfterLastShipout' on input line 108.
  (dokumentation.aux)
@@ -2941,38 +2954,34 @@ Package biblatex Warning: Please (re)run BibTeX on the file(s):
 Package logreq Info: Writing requests to 'dokumentation.run.xml'.
 \openout1 = `dokumentation.run.xml'.
 
- )
-(\end occurred inside a group at level 1)
-
-### semi simple group (level 1) entered at line 84 (\begingroup)
-### bottom level 
+ ) 
 Here is how much of TeX's memory you used:
- 39568 strings out of 493323
- 715652 string characters out of 3139054
+ 39586 strings out of 493323
+ 715896 string characters out of 3139054
  1428972 words of memory out of 3000000
- 41907 multiletter control sequences out of 15000+200000
- 119070 words of font info for 140 fonts, out of 3000000 for 9000
+ 41906 multiletter control sequences out of 15000+200000
+ 119381 words of font info for 143 fonts, out of 3000000 for 9000
  1145 hyphenation exceptions out of 8191
  72i,10n,80p,8902b,3445s stack positions out of 5000i,500n,10000p,200000b,50000s
-{C:/Program Files/MiKTeX 2.9/fonts/enc/dvips/lm/lm-ec.enc}{C:/P
-rogram Files/MiKTeX 2.9/fonts/enc/dvips/lm/lm-mathsy.enc}{C:/Program Files/MiKT
-eX 2.9/fonts/enc/dvips/lm/lm-ts1.enc}<C:/Program Files/MiKTeX 2.9/fonts/type1/p
-ublic/lm/lmbx10.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/public/lm/lmbx12.p
-fb><C:/Program Files/MiKTeX 2.9/fonts/type1/public/lm/lmbxi10.pfb><C:/Program F
-iles/MiKTeX 2.9/fonts/type1/public/lm/lmr10.pfb><C:/Program Files/MiKTeX 2.9/fo
-nts/type1/public/lm/lmr12.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/public/l
-m/lmr17.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/public/lm/lmr6.pfb><C:/Pro
-gram Files/MiKTeX 2.9/fonts/type1/public/lm/lmr7.pfb><C:/Program Files/MiKTeX 2
-.9/fonts/type1/public/lm/lmri10.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/pu
-blic/lm/lmri12.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/public/lm/lmri8.pfb
-><C:/Program Files/MiKTeX 2.9/fonts/type1/public/lm/lmro12.pfb><C:/Program File
-s/MiKTeX 2.9/fonts/type1/public/lm/lmssbx10.pfb><C:/Program Files/MiKTeX 2.9/fo
-nts/type1/public/lm/lmsy10.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/public/
-lm/lmtk10.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/public/lm/lmtt10.pfb><C:
-/Program Files/MiKTeX 2.9/fonts/type1/public/lm/lmtt12.pfb>
-Output written on dokumentation.pdf (24 pages, 500967 bytes).
+{C:/Program Files/MiKTeX 2.9/fonts/enc/dvips/lm/lm-ec.enc}{C:/Program Files/M
+iKTeX 2.9/fonts/enc/dvips/lm/lm-mathsy.enc}{C:/Program Files/MiKTeX 2.9/fonts/e
+nc/dvips/lm/lm-ts1.enc}<C:/Program Files/MiKTeX 2.9/fonts/type1/public/lm/lmbx1
+0.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/public/lm/lmbx12.pfb><C:/Program
+ Files/MiKTeX 2.9/fonts/type1/public/lm/lmbxi10.pfb><C:/Program Files/MiKTeX 2.
+9/fonts/type1/public/lm/lmr10.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/publ
+ic/lm/lmr12.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/public/lm/lmr17.pfb><C
+:/Program Files/MiKTeX 2.9/fonts/type1/public/lm/lmr6.pfb><C:/Program Files/MiK
+TeX 2.9/fonts/type1/public/lm/lmr7.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1
+/public/lm/lmri10.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/public/lm/lmri12
+.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/public/lm/lmri8.pfb><C:/Program F
+iles/MiKTeX 2.9/fonts/type1/public/lm/lmro12.pfb><C:/Program Files/MiKTeX 2.9/f
+onts/type1/public/lm/lmssbx10.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/publ
+ic/lm/lmsy10.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/public/lm/lmtk10.pfb>
+<C:/Program Files/MiKTeX 2.9/fonts/type1/public/lm/lmtt10.pfb><C:/Program Files
+/MiKTeX 2.9/fonts/type1/public/lm/lmtt12.pfb>
+Output written on dokumentation.pdf (25 pages, 507508 bytes).
 PDF statistics:
- 435 PDF objects out of 1000 (max. 8388607)
- 187 named destinations out of 1000 (max. 500000)
+ 454 PDF objects out of 1000 (max. 8388607)
+ 200 named destinations out of 1000 (max. 500000)
  39551 words of extra memory for PDF output out of 42996 (max. 10000000)
 

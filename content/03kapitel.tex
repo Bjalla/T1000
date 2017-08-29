@@ -288,7 +288,9 @@ In diesem Beispiel wird der Lese-Vorgang angestoßen. Während das Programm auf 
 
 Bei non-blocking Code sagt man auch, dass dieser \textit{asynchron} ausgeführt wird, während blocking Code \textit{synchron} arbeitet.
 
-%asynchronous, non--blocking, single-threaded, event-driven, event loop
+Das Prinzip der asynchronen Abarbeitung von Code kann beliebig kompliziert angewandt werden. Problematisch wird dabei jedoch die Fehlerbehandlung und die vielen Callback-Funktionen. Aus diesem Grund gibt es \textit{Promises}. Sie ermöglichen die asynchrone Arbeitsweise und halten den Code dabei vergleichsweise einfach. Im Allgemeinen repräsentieren Promises das Ergebnis eines asynchronen Prozesses. Dabei können sie einen von drei Zuständen haben: \textit{pending} (ausstehend), \textit{fulfilled} (erfüllt) und \textit{rejected} (abgelehnt). Ihr ursprünglicher Zustand ist dabei pending. Wird eine asynchrone Operation ausgeführt, verändert sich der Status entweder zu fulfilled oder rejected. Wird einer dieser beiden Zustände erreicht, kann er für dieses Promise nicht mehr geändert werden \cite{prom}.
+
+%single-threaded, event-driven, event loop
 
 
 
