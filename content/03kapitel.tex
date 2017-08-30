@@ -316,12 +316,22 @@ In diesem Beispiel soll eine Datei eingelesen (\texttt{readFile}) und mit dem Er
 
 Die Möglichkeit von asynchronen Funktionen hilft, eine Art Multithreading zu simulieren, da JavaScript dieses nicht unterstützt. Node.js ist durch die \textit{Event Loop} (Ereignis-Schleife) in der Lage, asynchrone Funktionen umzusetzen, indem gewisse Aufgaben an den Kernel abgegeben werden. Heutzutage sind die meisten Kernel fähig, mehrere Threads gleichzeitig laufen zu lassen, weshalb Node.js auch mehrere Aufgaben gleichzeitig abgeben kann. Die Event-Loop sorgt dann dafür, dass keine Aufgaben vergessen werden und so bald wie möglich weitergeführt werden.
 
-Die Event-Loop kann in sechs Phasen unterteilt werden.\\ \\
-\textbf{Timers}:\\
-In dieser Phase werden zunächst alle offenen Callbacks von Timer-Funktionen wie \texttt{setTimeout()} oder \texttt{setInterval()} abgearbeitet. Dabei ist es möglich, dass die festgelegte Dauer nicht der tatsächlichen entsrpricht. Da Node.js verschiedene Phasen durchläuft und in jeder andere Aufgaben abarbeitet, ist es möglich, dass eine solche Ereignis-Schleife in einer kürzeren Zeit als der vom Timer angesetzten komplett ist. Dann wird der Callback des Timers noch nicht ausgeführt. Jetzt ist kann es passieren, dass der nächste Durchlauf der Event Loop länger dauert und zum Beispiel bei der Hälfte die Zeit des Timers abgelaufen ist. An dieser Stelle wird Node.js nicht zur Timers-Phase zurückspringen, sondern die Event Loop zuende führen und sich im nächsten Durchlauf um die Timer kümmern. Das bedeutet, dass wenn eine Funktion einen Timer hat, der 100 ms warten soll, und danach weiterarbeiten soll, kann es sein, dass die nachfolgenden Aufgaben nicht wie gewünscht 100 ms, sondern möglicherweise 105 ms verzögert ausgeführt werden. \\
+Die Event-Loop kann in fünf Phasen unterteilt werden.\\ \\
+\textbf{Timers:}\\
+In dieser Phase werden zunächst alle offenen Callbacks von Timer-Funktionen wie \texttt{setTimeout()} oder \texttt{setInterval()} abgearbeitet. Dabei ist es möglich, dass die festgelegte Dauer nicht der tatsächlichen entsrpricht. Da Node.js verschiedene Phasen durchläuft und in jeder andere Aufgaben abarbeitet, ist es möglich, dass eine solche Ereignis-Schleife in einer kürzeren Zeit als der vom Timer angesetzten komplett ist. Dann wird der Callback des Timers noch nicht ausgeführt. Jetzt ist kann es passieren, dass der nächste Durchlauf der Event Loop länger dauert und zum Beispiel bei der Hälfte die Zeit des Timers abgelaufen ist. An dieser Stelle wird Node.js nicht zur Timers-Phase zurückspringen, sondern die Event Loop zuende führen und sich im nächsten Durchlauf um die Timer kümmern. Das bedeutet, dass wenn eine Funktion einen Timer hat, der 100 ms warten soll, und danach weiterarbeiten soll, kann es sein, dass die nachfolgenden Aufgaben nicht wie gewünscht 100 ms, sondern möglicherweise 105 ms verzögert ausgeführt werden \cite{njsel}.
 
+\textbf{I/O Callbacks:}\\
+In der nächsten Phase werden mit einigen wenigen Ausnahmen alle Callbacks ausgeführt. Zu den Ausnahmen zählen Timer-Callbacks, Callbacks, welche zu einem \textit{close}-Event gehören sowie Callbacks der \texttt{setImmediate}-Funktion \cite{njsel}.
 
-%single-threaded, event-driven, event loop
+\textbf{Poll:}\\
+Die Poll-Phase führt die Skripte aus den Timer-Funktionen aus und verarbeitet die \textit{Events} (Ereignisse), die in der Poll-Warteschlange sind. Diese werden eines nach dem anderen verarbeitet. Dabei geht Node.js nach dem \ac{FIFO} Prinzip vor, d.h. die Ereignisse werden in genau der Reihenfolge, in der sie angekommen sind, auch abgearbeitet. Sobald alle Aufgaben verarbeitet sind und damit die Warteschlange leer, prüft die Event Loop, ob Timer abgelaufen und für die nächsten Schritte bereit sind. Wenn dies der Fall ist, springt die Event Loop zur Timers-Phase zurück. Ist jedoch die Warteschlange leer, so wird abhängig davon, ob Ereignisse von \texttt{setImmediate}-Timern ausstehend sind, entweder die nächste Phase eingeleitet oder die Event Loop verharrt in der Poll-Phase undwartet auf weitere Callbacks in der Warteschlange, damit diese sofort ausgeführt werden können \cite{njsel}.
+
+\textbf{Check:}\\
+In der Check-Phase werden ausschließlich Callbacks von \texttt{setImmediate}-Aufrufen verarbeitet. Diese sind darauf ausgelegt, unmittelbar nach der Poll-Phase ausgeführt zu werden \cite{njsel}.
+
+\textbf{Close:}\\
+Wird ein Socket oder eine ähnliche Struktur mit einer Methode geschlossen, wird ein \textit{close}-Event ausgelöst. In der Close-Phase werden diese Ereignisse bearbeitet \cite{njsel}.
+
 
 
 
