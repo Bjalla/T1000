@@ -21,13 +21,11 @@
 %\end{lstlisting}
 
 \section{IBM Connections}
-\large
 
 \newpage
 
 
 \section{IBM Connections Seedlists}
-\large
 IBM Connections stellt für den Abruf von Informationen sogenannte Seedlists zur Verfügung \cite{conn2}. Diese beinhalten sowohl die geschriebenen Daten und Ersteller als auch Meta-Daten wie IDs, Ratings, Anzahl der Besuche oder Tags \cite{resp}. 
 
 Wenn man sich die XML-Antwort von Connections ansieht, stellt man fest, dass diese ein XML-Dokument ist und viele Informationen bereitstellt: \\
@@ -76,7 +74,6 @@ Dieser wird bei dem wiederholten Sammeln der Daten relevant. In diesem Fall gibt
 \newpage
 
 \section{Web-Crawling}
-\large
 Ein Web-Crawler (auch Web-Spider genannt) ist ein Programm, welches automatisch allen Links auf einer Webseite folgt und den Inhalt der Seiten herunterlädt. Das größte Anwendungsgebiet für Web-Crawler sind Suchmaschinen. Diese nutzen die Crawler, um Webseiten zu finden und zu speichern, um anschließend den Inhalt zu indexieren. Mit Hilfe dieser Indizes können Suchmaschinen die passenden Webseiten für den Benutzer herausfiltern \cite{crawl}.
 
 Web-Crawler können für ganz unterschiedliche Zwecke eingesetzt werden. Je nach Verwendung liegt der Fokus beim indexieren der Seiten anders. Bei Suchmaschinen werden häufig alle Elemente einer Seite untersucht und indexiert. Crawler für Preisvergleich-Portale filtern nur die relevanten Informationen über Produkte und Preise. Eine weitere Möglichkeit, diese Programme zu verwenden, ist sie als Analyse-Tools nach Besucheranzahlen oder Links, die von anderen Seiten auf die Eigene führen, suchen zu lassen. Eine andere Art der Verwendung, die häufig in Spam-Mails resultiert, lässt die Crawler ausschließlich E-Mail-Adressen indexieren \cite{ryte}.
@@ -87,7 +84,6 @@ Um einen Web-Crawler in Betrieb zu nehmen, benötigt dieser eine oder mehrere Au
 \newpage
 
 \section{XML und XML-Parser}
-\large
 Bei der \ac{XML} handelt es sich um einen Standard, nach dessen Vorgaben Online-Dokumente erstellt werden können. Es ist eine Unterart der \ac{SGML} \cite{xmldef}. Ein Dokument, welches mit einer Markup Language erstellt wurde, besteht aus Tags. Diese bestimmen die Art und die Formatierung eines Elements \cite{markup}. \ac{XML} heißt \textit{Extensible}, da im Gegensatz zu \ac{HTML}, einer anderen für Online-Dokumente verwendete Markup Language, eigene Tags erstellt und verwendet werden können. Solche Tags können über die Art und Formatierung hinaus auch den Sinngehalt des Inhalts festhalten \cite{xmldef}.
 
 So könnte die Darstellung eines Produktes mit \acs{HTML} aussehen: \\
@@ -234,7 +230,6 @@ Das Ergebnis diese Codes ist ein JSON-Objekt, welches man weiterverarbeiten kann
 \newpage
 
 \section{Node.js und asynchrone Programmierung}
-\large
 Im Allgemeinen kann man Node.js als server-seitiges JavaScript bezeichnen. Es bietet eine Möglichkeit, JavaScript direkt auf einem Computer auszuführen, statt dies nur in einem Browser zu tun \cite{njsspec}. Darüber hinaus besitzt Node.js einige Eigenschaften, die im Folgenden etwas erläutert werden sollen.
 
 Ein Hilfsmittel für das Arbeiten mit Node.js ist der \textit{\ac{npm}}. Dieser ermöglicht es, sogenannte \textit{Packages} oder auch \textit{Module} im eigenen Code zu verwenden. Dafür muss zunächst der \ac{npm} installiert sein. Danach können mit dem Kommandozeilenbefehl \texttt{npm install <package name>} die einzelnen Packages installiert werden. Um diese dann zu verwenden müssen sie in der JavaScript-Datei mit dem folgenden Code hinzugefügt werden: \\

@@ -67,10 +67,6 @@
 	\cleardoublepage
 	\listoffigures
 
-	%Tabellenverzeichnis
-	\cleardoublepage
-	\listoftables
-
 	% Quellcodeverzeichnis
 	\cleardoublepage
 	\lstlistoflistings
@@ -81,6 +77,7 @@
 	\pagestyle{headings}		% Kolumnentitel im Kopf, Seitenzahlen im Fuß
 
 	% Inhalt
+	\large
 	\foreach \i in {01,02,03,04,05,06,07,08,09,...,99} {%
 		\edef\FileName{content/\i kapitel}%
 			\IfFileExists{\FileName}{%
@@ -103,6 +100,6 @@
 	% sonstiger Anhang
 	\clearpage
 	\appendix
-	\input{ads/appendix}
+	
 	
 \end{document}
