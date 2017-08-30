@@ -21,7 +21,9 @@
 %\end{lstlisting}
 
 \section{IBM Connections}
-
+IBM Connections ist ein Software-Produkt aus dem Hause IBM. Es bietet eine Social-Media-Plattform für firmeninterne Zwecke. Dabei hat jeder Mitarbeiter ein eigenes Profil mit Kontaktdaten und einigen Informationen zu seinem Beruf. Darüber hinaus können die Nutzer Statuseinträge verfassen sowie Blogs und Communities erstellen. \\
+\textit{Communities} sind Gruppen von Nutzern, die sich mit einem Thema beschäftigen oder für das sie sich interessieren. In den Communities können dann Informationen und Dokumente geteilt sowie Ankündigungen gemacht werden. Jeder Nutzer kann einen \textit{Blog} erstellen, in dem Beiträge zu diversen Themen oder Dokumente veröffentlicht werden. Weiterhin gibt es \textit{Wikis}, die Ansammlungen von Wissen über beispielsweise firmeninterne Prozesse sind. Unter \textit{News} sind Statuseinträge, Meinungen oder Ankündigungen von anderen Nutzern aus seinem Netzwerk zu finden. Eine weitere Teil von IBM Connections sind die Foren, in denen jeder Nutzer mit anderen eine Diskussion führen kann. \\
+Alle Komponenten können mit Stichwörtern, sogenannten \textit{Tags} versehen werden, um die Suche nach bestimmten Informationen zu erleichtern. Für die Ersteller von Blogs, Communities oder Wikis stehen statistische Informationen zu Verfügung, wie zum Beispiel die Anzahl der Besuche \cite{conn3}.
 \newpage
 
 
@@ -306,12 +308,12 @@ Das gleiche Ergebnis kann mit einfacherer Fehlerbehandlung mit Promises erreicht
 \end{lstlisting}
 
 In diesem Beispiel soll eine Datei eingelesen (\texttt{readFile}) und mit dem Ergebnis in der Konsole ausgegeben werden. Daher wird der \texttt{then}-Methode die \texttt{console.log}-Funktion als ersten Parameter mitgegeben, da diese ausgeführt werden soll, wenn das Promise fulfilled ist. Sie bearbeitet das Ergebnis von \texttt{readFile} weiter, da sie es automatisch als Parameter zugewiesen bekommt.
+Für die einfache Nutzung von Promises in Node.js wurde die Promise-Bibliothek \textit{q} entwickelt, die auch in der Erstellung dieses Projektes Anwendung findet. Sie bietet darüber hinaus viele weitere Funktionen, die den Umgang mit Promises erleichtern \cite{q}. 
 
-%TODO: Q Promises
+Die Möglichkeit, asynchronen Funktionen zu verwenden, hilft eine Art Multithreading zu simulieren, da JavaScript dieses nicht unterstützt. Node.js ist durch die \textit{Event Loop} (Ereignis-Schleife) in der Lage, asynchrone Funktionen umzusetzen, indem gewisse Aufgaben an den Kernel abgegeben werden. Heutzutage sind die meisten Kernel fähig, mehrere Threads gleichzeitig laufen zu lassen, weshalb Node.js auch mehrere Aufgaben gleichzeitig abgeben kann. Die Event-Loop sorgt dann dafür, dass keine Aufgaben vergessen werden und so bald wie möglich weitergeführt werden.
 
-Die Möglichkeit von asynchronen Funktionen hilft, eine Art Multithreading zu simulieren, da JavaScript dieses nicht unterstützt. Node.js ist durch die \textit{Event Loop} (Ereignis-Schleife) in der Lage, asynchrone Funktionen umzusetzen, indem gewisse Aufgaben an den Kernel abgegeben werden. Heutzutage sind die meisten Kernel fähig, mehrere Threads gleichzeitig laufen zu lassen, weshalb Node.js auch mehrere Aufgaben gleichzeitig abgeben kann. Die Event-Loop sorgt dann dafür, dass keine Aufgaben vergessen werden und so bald wie möglich weitergeführt werden.
+Die Event-Loop kann in fünf Phasen unterteilt werden.
 
-Die Event-Loop kann in fünf Phasen unterteilt werden.\\ \\
 \textbf{Timers:}\\
 In dieser Phase werden zunächst alle offenen Callbacks von Timer-Funktionen wie \texttt{setTimeout()} oder \texttt{setInterval()} abgearbeitet. Dabei ist es möglich, dass die festgelegte Dauer nicht der tatsächlichen entsrpricht. Da Node.js verschiedene Phasen durchläuft und in jeder andere Aufgaben abarbeitet, ist es möglich, dass eine solche Ereignis-Schleife in einer kürzeren Zeit als der vom Timer angesetzten komplett ist. Dann wird der Callback des Timers noch nicht ausgeführt. Jetzt ist kann es passieren, dass der nächste Durchlauf der Event Loop länger dauert und zum Beispiel bei der Hälfte die Zeit des Timers abgelaufen ist. An dieser Stelle wird Node.js nicht zur Timers-Phase zurückspringen, sondern die Event Loop zuende führen und sich im nächsten Durchlauf um die Timer kümmern. Das bedeutet, dass wenn eine Funktion einen Timer hat, der 100 ms warten soll, und danach weiterarbeiten soll, kann es sein, dass die nachfolgenden Aufgaben nicht wie gewünscht 100 ms, sondern möglicherweise 105 ms verzögert ausgeführt werden \cite{njsel}.
 

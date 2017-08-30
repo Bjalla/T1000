@@ -164,4 +164,16 @@
   url    = {https://nodejs.org/en/docs/guides/event-loop-timers-and-nexttick/#the-node-js-event-loop-timers-and-process-nexttick},
 }
 
+@Online{conn3,
+  author = {IBM},
+  title  = {IBM Connections},
+  url    = {http://www-03.ibm.com/software/products/de/conn},
+}
+
+@Online{q,
+  author = {Kristopher Michael Kowal},
+  title  = {q},
+  url    = {https://www.npmjs.com/package/q},
+}
+
 @Comment{jabref-meta: databaseType:biblatex;}
