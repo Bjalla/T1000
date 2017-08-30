@@ -1,0 +1,16 @@
+%TEX root = ../dokumentation.tex
+
+\chapter{Datencrawler}
+
+\section{Vorüberlegung}
+\large
+Der zu bauende Datencrawler soll mit Hilfe einer IBM Connections Seedlist-\ac{URL} die vollständige Seedlist herunterladen und im JSON-Format an eine API senden. Dazu muss das Programm sich zunächst authentifizieren, dann den Inhalt herunterladen und sortieren und schließlich weitergeben.\\
+\begin{figure}[ht]
+\centering
+\includegraphics[width=1.0\textwidth, height=10cm]{Ablauf.png}
+\caption{Ablauf des Programms}
+\end{figure}
+
+Im ersten Schritt soll der Crawler einmal versuchen, eine Seedlist abzuholen. Wenn dies nicht erfolgreich war und der HTTP-Statuscode \textit{401 Unauthorized} ist, bedeutet dies, dass das Token für die Authentifizierung abgelaufen ist. Daher muss das Programm einen neuen Token bekommen und versucht, sich zu authentifizieren. Gelingt dies nicht, bricht es ab. Bei Erfolg versucht es erneut, sich die Seedlist zu holen. Sollte die Antwort bei dem Abruf der Seedlist ein anderer Statuscode als \textit{200 OK} oder \textit{401 Unauthorized} sein, hat das Programm keine weitere Möglichkeit, auf die Seedlist zuzugreifen und bricht ab.
+
+Gelingt der Abruf, kann der Inhalt der Seedlist verarbeitet werden. Da dieser in Form von XML bereitgestellt wird, muss er zunächst geparsed werden. Danach werden die für den Expertise Locator relevanten Daten gefiltert und in ein JSON-Objekt überführt. Wenn in diesem Vorgang ein Fehler auftritt, wird das Programm abgebrochen.
