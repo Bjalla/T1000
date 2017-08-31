@@ -1,10 +1,11 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.18 (MiKTeX 2.9.6350 64-bit) (preloaded format=pdflatex 2017.6.26)  30 AUG 2017 16:51
+This is pdfTeX, Version 3.14159265-2.6-1.40.18 (MiKTeX 2.9.6350 64-bit) (preloaded format=pdflatex 2017.6.26)  31 AUG 2017 14:30
 entering extended mode
-**./dokumentation.tex
-(dokumentation.tex
+**C:/Users/IBM_ADMIN/Documents/Uni/T1000/latexVorlage-master/dokumentation.tex
+(C:/Users/IBM_ADMIN/Documents/Uni/T1000/latexVorlage-master/dokumentation.tex
 LaTeX2e <2017-04-15>
 Babel <3.10> and hyphenation patterns for 75 language(s) loaded.
-(ads/header.tex ("C:\Program Files\MiKTeX 2.9\tex\latex\nag\nag.sty"
+(C:/Users/IBM_ADMIN/Documents/Uni/T1000/latexVorlage-master\ads/header.tex
+("C:\Program Files\MiKTeX 2.9\tex\latex\nag\nag.sty"
 Package: nag 2011/11/25 0.7 warning about old commands (ulmi)
 \c@nag@c=\count79
 \c@nag@sins=\count80
@@ -630,8 +631,12 @@ Package textcomp Info: Setting pplj sub-encoding to TS1/3 on input line 407.
 Package textcomp Info: Setting ptmx sub-encoding to TS1/4 on input line 408.
 Package textcomp Info: Setting ptmj sub-encoding to TS1/4 on input line 409.
 )
-(ads/einstellungen_liste.tex) (einstellungen.tex) (lang/strings.tex)
-(lang/de.tex) ("C:\Program Files\MiKTeX 2.9\tex\generic\babel\babel.sty"
+(C:/Users/IBM_ADMIN/Documents/Uni/T1000/latexVorlage-master\ads/einstellungen_l
+iste.tex)
+(C:/Users/IBM_ADMIN/Documents/Uni/T1000/latexVorlage-master\einstellungen.tex)
+(C:/Users/IBM_ADMIN/Documents/Uni/T1000/latexVorlage-master\lang/strings.tex)
+(C:/Users/IBM_ADMIN/Documents/Uni/T1000/latexVorlage-master\lang/de.tex)
+("C:\Program Files\MiKTeX 2.9\tex\generic\babel\babel.sty"
 Package: babel 2017/05/19 3.10 The Babel package
 
 *************************************
@@ -1822,7 +1827,7 @@ File: lstmisc.sty 2015/06/04 1.6 (Carsten Heinz)
 Package glossaries Info: Writing glossary file dokumentation.glo on input line 
 16.
 
-(ads/glossary.tex)
+(C:/Users/IBM_ADMIN/Documents/Uni/T1000/latexVorlage-master\ads/glossary.tex)
 Package csquotes Info: Checking for multilingual support...
 Package csquotes Info: ... found 'babel' package.
 Package biblatex Info: Trying to load language 'german'...
@@ -1843,7 +1848,7 @@ Package biblatex Info: ... file 'english.lbx' found.
 ("C:\Program Files\MiKTeX 2.9\tex\latex\biblatex\lbx\english.lbx"
 File: english.lbx 2016/12/05 v3.7 biblatex localization (PK/JW/AB)
 )
-(dokumentation.aux)
+(C:/Users/IBM_ADMIN/Documents/Uni/T1000/latexVorlage-master\dokumentation.aux)
 \openout1 = `dokumentation.aux'.
 
 LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 20.
@@ -1860,7 +1865,8 @@ LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 20.
 LaTeX Font Info:    ... okay on input line 20.
 LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 20.
 LaTeX Font Info:    Try loading font information for TS1+cmr on input line 20.
- ("C:\Program Files\MiKTeX 2.9\tex\latex\base\ts1cmr.fd"
+
+("C:\Program Files\MiKTeX 2.9\tex\latex\base\ts1cmr.fd"
 File: ts1cmr.fd 2014/09/29 v2.5h Standard LaTeX font definitions
 )
 LaTeX Font Info:    ... okay on input line 20.
@@ -1990,14 +1996,15 @@ Package biblatex Info: Data encoding 'utf8' specified.
 Package biblatex Info: Trying to load bibliographic data...
 Package biblatex Info: ... file 'dokumentation.bbl' found.
 
-(dokumentation.bbl)
+(C:/Users/IBM_ADMIN/Documents/Uni/T1000/latexVorlage-master\dokumentation.bbl)
 Package biblatex Info: Reference section=0 on input line 20.
 Package biblatex Info: Reference segment=0 on input line 20.
 Package nag Info: Command \caption@xlabel not defined, skipping amendment on in
 put line 20.
 Package nag Info: Command \hc@caption not defined, skipping amendment on input 
 line 20.
- (ads/deckblatt.tex
+
+(C:/Users/IBM_ADMIN/Documents/Uni/T1000/latexVorlage-master\ads/deckblatt.tex
 <images/ibm.png, id=6, 163.812pt x 69.25874pt>
 File: images/ibm.png Graphic file (type png)
  <use images/ibm.png>
@@ -2032,8 +2039,10 @@ Package babel Info: Redefining german shorthand "~
 
 
 
-{C:/ProgramData/MiKTeX/2.9/pdftex/config/pdftex.map} <./images/ibm.png> <./imag
-es/dhbw.png>]) (ads/erklaerung.tex
+{C:/ProgramData/MiKTeX/2.9/pdftex/config/pdftex.map} <C:/Users/IBM_ADMIN/Docume
+nts/Uni/T1000/latexVorlage-master/images/ibm.png> <C:/Users/IBM_ADMIN/Documents
+/Uni/T1000/latexVorlage-master/images/dhbw.png>])
+(C:/Users/IBM_ADMIN/Documents/Uni/T1000/latexVorlage-master\ads/erklaerung.tex
 LaTeX Font Info:    Try loading font information for T1+lmss on input line 5.
 
 ("C:\Program Files\MiKTeX 2.9\tex\latex\lm\t1lmss.fd"
@@ -2056,7 +2065,8 @@ Package babel Info: Redefining german shorthand "|
 (babel)             in language  on input line 33.
 Package babel Info: Redefining german shorthand "~
 (babel)             in language  on input line 33.
- [1] (ads/abstract.tex
+ [1]
+(C:/Users/IBM_ADMIN/Documents/Uni/T1000/latexVorlage-master\ads/abstract.tex
 LaTeX Font Info:    Try loading font information for T1+lmtt on input line 37.
 
 ("C:\Program Files\MiKTeX 2.9\tex\latex\lm\t1lmtt.fd"
@@ -2133,7 +2143,8 @@ Package babel Info: Redefining german shorthand "~
 ])
 Package tocbasic Info: character protrusion at toc deactivated on input line 56
 .
- (dokumentation.toc)
+
+(C:/Users/IBM_ADMIN/Documents/Uni/T1000/latexVorlage-master\dokumentation.toc)
 \tf@toc=\write8
 \openout8 = `dokumentation.toc'.
 
@@ -2149,9 +2160,11 @@ Package babel Info: Redefining german shorthand "|
 (babel)             in language  on input line 57.
 Package babel Info: Redefining german shorthand "~
 (babel)             in language  on input line 57.
- [3
 
-] (ads/acronyms.tex
+[3
+
+]
+(C:/Users/IBM_ADMIN/Documents/Uni/T1000/latexVorlage-master\ads/acronyms.tex
 chapter without number
 Package babel Info: Redefining german shorthand "f
 (babel)             in language  on input line 3.
@@ -2201,7 +2214,8 @@ Package babel Info: Redefining german shorthand "~
 (babel)             in language  on input line 68.
 Package tocbasic Info: character protrusion at lof deactivated on input line 68
 .
- (dokumentation.lof)
+
+(C:/Users/IBM_ADMIN/Documents/Uni/T1000/latexVorlage-master\dokumentation.lof)
 \tf@lof=\write9
 \openout9 = `dokumentation.lof'.
 
@@ -2217,7 +2231,8 @@ Package babel Info: Redefining german shorthand "|
 (babel)             in language  on input line 71.
 Package babel Info: Redefining german shorthand "~
 (babel)             in language  on input line 71.
- [5
+
+[5
 
 
 
@@ -2243,7 +2258,7 @@ Package babel Info: Redefining german shorthand "|
 (babel)             in language  on input line 72.
 Package babel Info: Redefining german shorthand "~
 (babel)             in language  on input line 72.
-(dokumentation.lol)
+(C:/Users/IBM_ADMIN/Documents/Uni/T1000/latexVorlage-master\dokumentation.lol)
 \tf@lol=\write10
 \openout10 = `dokumentation.lol'.
 
@@ -2259,11 +2274,14 @@ Package babel Info: Redefining german shorthand "|
 (babel)             in language  on input line 73.
 Package babel Info: Redefining german shorthand "~
 (babel)             in language  on input line 73.
- [6
+
+[6
 
 
 
-] (content/01kapitel.tex
+]
+(C:/Users/IBM_ADMIN/Documents/Uni/T1000/latexVorlage-master\content/01kapitel.t
+ex
 chapter 1.
 Package babel Info: Redefining german shorthand "f
 (babel)             in language  on input line 3.
@@ -2271,7 +2289,9 @@ Package babel Info: Redefining german shorthand "|
 (babel)             in language  on input line 3.
 Package babel Info: Redefining german shorthand "~
 (babel)             in language  on input line 3.
-) (content/02kapitel.tex
+)
+(C:/Users/IBM_ADMIN/Documents/Uni/T1000/latexVorlage-master\content/02kapitel.t
+ex
 Package babel Info: Redefining german shorthand "f
 (babel)             in language  on input line 3.
 Package babel Info: Redefining german shorthand "|
@@ -2301,6 +2321,14 @@ Package babel Info: Redefining german shorthand "|
 (babel)             in language  on input line 3.
 Package babel Info: Redefining german shorthand "~
 (babel)             in language  on input line 3.
+Package acronym Info: Label `acro:EE' newly defined as it shall be overridden
+although it is yet undefined on input line 4.
+
+Package acronym Warning: Acronym `EE' is not defined on input line 4.
+
+
+Package acronym Warning: Acronym `EE' is not defined on input line 4.
+
 Package babel Info: Redefining german shorthand "f
 (babel)             in language  on input line 7.
 Package babel Info: Redefining german shorthand "|
@@ -2315,7 +2343,9 @@ Package babel Info: Redefining german shorthand "~
 (babel)             in language  on input line 7.
 [2
 
-]) (content/03kapitel.tex
+])
+(C:/Users/IBM_ADMIN/Documents/Uni/T1000/latexVorlage-master\content/03kapitel.t
+ex
 chapter 3.
 Package babel Info: Redefining german shorthand "f
 (babel)             in language  on input line 4.
@@ -2330,7 +2360,7 @@ Package babel Info: Redefining german shorthand "|
 Package babel Info: Redefining german shorthand "~
 (babel)             in language  on input line 23.
 
-LaTeX Warning: Citation 'conn' on page 3 undefined on input line 26.
+LaTeX Warning: Citation 'conn3' on page 3 undefined on input line 26.
 
 Package babel Info: Redefining german shorthand "f
 (babel)             in language  on input line 27.
@@ -2709,102 +2739,106 @@ Package babel Info: Redefining german shorthand "~
 (babel)             in language  on input line 285.
 
 [13]
-
-LaTeX Warning: Citation 'prom' on page 14 undefined on input line 288.
-
-
-LaTeX Warning: Citation 'proma' on page 14 undefined on input line 290.
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 292--293
+Underfull \hbox (badness 10000) in paragraph at lines 286--287
 
  []
+
+
+LaTeX Warning: Citation 'prom' on page 14 undefined on input line 296.
+
+
+LaTeX Warning: Citation 'proma' on page 14 undefined on input line 298.
 
 
 Overfull \vbox (7.89444pt too high) has occurred while \output is active []
 
 Package babel Info: Redefining german shorthand "f
-(babel)             in language  on input line 294.
+(babel)             in language  on input line 299.
 Package babel Info: Redefining german shorthand "|
-(babel)             in language  on input line 294.
+(babel)             in language  on input line 299.
 Package babel Info: Redefining german shorthand "~
-(babel)             in language  on input line 294.
+(babel)             in language  on input line 299.
 Package babel Info: Redefining german shorthand "f
-(babel)             in language  on input line 294.
+(babel)             in language  on input line 299.
 Package babel Info: Redefining german shorthand "|
-(babel)             in language  on input line 294.
+(babel)             in language  on input line 299.
 Package babel Info: Redefining german shorthand "~
-(babel)             in language  on input line 294.
+(babel)             in language  on input line 299.
 
 [14]
-Underfull \hbox (badness 10000) in paragraph at lines 302--303
+Underfull \hbox (badness 10000) in paragraph at lines 300--301
 
  []
 
 
-LaTeX Warning: Citation 'njsel' on page 15 undefined on input line 318.
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 316--319
+Underfull \hbox (badness 10000) in paragraph at lines 310--311
 
  []
 
 
-Overfull \hbox (3.09161pt too wide) in paragraph at lines 316--319
+LaTeX Warning: Citation 'q' on page 15 undefined on input line 319.
+
+
+Overfull \vbox (7.89444pt too high) has occurred while \output is active []
+
+Package babel Info: Redefining german shorthand "f
+(babel)             in language  on input line 322.
+Package babel Info: Redefining german shorthand "|
+(babel)             in language  on input line 322.
+Package babel Info: Redefining german shorthand "~
+(babel)             in language  on input line 322.
+Package babel Info: Redefining german shorthand "f
+(babel)             in language  on input line 322.
+Package babel Info: Redefining german shorthand "|
+(babel)             in language  on input line 322.
+Package babel Info: Redefining german shorthand "~
+(babel)             in language  on input line 322.
+
+[15]
+
+LaTeX Warning: Citation 'njsel' on page 16 undefined on input line 326.
+
+
+Overfull \hbox (3.09161pt too wide) in paragraph at lines 325--327
 \T1/lmr/m/n/14.4 (-20) In die-ser Pha-se wer-den zu-nächst al-le of-fe-nen Call
 -backs von Timer-Funktionen
  []
 
 
-Overfull \vbox (7.89444pt too high) has occurred while \output is active []
-
-Package babel Info: Redefining german shorthand "f
-(babel)             in language  on input line 319.
-Package babel Info: Redefining german shorthand "|
-(babel)             in language  on input line 319.
-Package babel Info: Redefining german shorthand "~
-(babel)             in language  on input line 319.
-Package babel Info: Redefining german shorthand "f
-(babel)             in language  on input line 319.
-Package babel Info: Redefining german shorthand "|
-(babel)             in language  on input line 319.
-Package babel Info: Redefining german shorthand "~
-(babel)             in language  on input line 319.
-
-[15]
-
-LaTeX Warning: Citation 'njsel' on page 16 undefined on input line 321.
+LaTeX Warning: Citation 'njsel' on page 16 undefined on input line 329.
 
 Package acronym Info: Label `acro:FIFO' newly defined as it shall be overridden
 
-although it is yet undefined on input line 324.
+although it is yet undefined on input line 332.
 
-LaTeX Warning: Citation 'njsel' on page 16 undefined on input line 324.
+LaTeX Warning: Citation 'njsel' on page 16 undefined on input line 332.
 
 
 Overfull \vbox (7.89444pt too high) has occurred while \output is active []
 
 Package babel Info: Redefining german shorthand "f
-(babel)             in language  on input line 325.
+(babel)             in language  on input line 333.
 Package babel Info: Redefining german shorthand "|
-(babel)             in language  on input line 325.
+(babel)             in language  on input line 333.
 Package babel Info: Redefining german shorthand "~
-(babel)             in language  on input line 325.
+(babel)             in language  on input line 333.
 Package babel Info: Redefining german shorthand "f
-(babel)             in language  on input line 325.
+(babel)             in language  on input line 333.
 Package babel Info: Redefining german shorthand "|
-(babel)             in language  on input line 325.
+(babel)             in language  on input line 333.
 Package babel Info: Redefining german shorthand "~
-(babel)             in language  on input line 325.
+(babel)             in language  on input line 333.
 
 [16]
 
-LaTeX Warning: Citation 'njsel' on page 17 undefined on input line 327.
+LaTeX Warning: Citation 'njsel' on page 17 undefined on input line 335.
 
 
-LaTeX Warning: Citation 'njsel' on page 17 undefined on input line 330.
+LaTeX Warning: Citation 'njsel' on page 17 undefined on input line 338.
 
-) (content/04kapitel.tex
+)
+(C:/Users/IBM_ADMIN/Documents/Uni/T1000/latexVorlage-master\content/04kapitel.t
+ex
 Overfull \vbox (7.89444pt too high) has occurred while \output is active []
 
 Package babel Info: Redefining german shorthand "f
@@ -2834,7 +2868,10 @@ Package babel Info: Redefining german shorthand "|
 (babel)             in language  on input line 5.
 Package babel Info: Redefining german shorthand "~
 (babel)             in language  on input line 5.
-<images/Ablauf.png, id=365, 1156.32pt x 650.43pt>
+
+Package acronym Warning: Acronym `JSON' is not defined on input line 6.
+
+<images/Ablauf.png, id=372, 1156.32pt x 650.43pt>
 File: images/Ablauf.png Graphic file (type png)
  <use images/Ablauf.png>
 Package pdftex.def Info: images/Ablauf.png used on input line 9.
@@ -2854,7 +2891,12 @@ Package babel Info: Redefining german shorthand "~
 
 [18
 
- <./images/Ablauf.png>]
+ <C:/Users/IBM_ADMIN/Documents/Uni/T1000/latexVorlage-master/images/Ablauf.png>
+]
+
+Package acronym Warning: Acronym `JSON' is not defined on input line 15.
+
+
 Overfull \vbox (7.89444pt too high) has occurred while \output is active []
 
 Package babel Info: Redefining german shorthand "f
@@ -2877,6 +2919,170 @@ Package babel Info: Redefining german shorthand "|
 (babel)             in language  on input line 22.
 Package babel Info: Redefining german shorthand "~
 (babel)             in language  on input line 22.
+
+Underfull \hbox (badness 10000) in paragraph at lines 24--25
+\T1/lmr/m/n/14.4 (+20) Der gan-ze Ab-lauf lässt sich mit zwei Funk-tio-nen um-s
+et-zen:
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 28--31
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 40--41
+
+ []
+
+
+Overfull \vbox (7.89444pt too high) has occurred while \output is active []
+
+Package babel Info: Redefining german shorthand "f
+(babel)             in language  on input line 42.
+Package babel Info: Redefining german shorthand "|
+(babel)             in language  on input line 42.
+Package babel Info: Redefining german shorthand "~
+(babel)             in language  on input line 42.
+Package babel Info: Redefining german shorthand "f
+(babel)             in language  on input line 42.
+Package babel Info: Redefining german shorthand "|
+(babel)             in language  on input line 42.
+Package babel Info: Redefining german shorthand "~
+(babel)             in language  on input line 42.
+
+[20]
+Overfull \hbox (39.85791pt too wide) in paragraph at lines 58--59
+[]\T1/lmr/m/n/14.4 (-20) Sobald ein neu-es To-ken zur Ver-fü-gung steht, wird d
+ie \T1/lmtt/m/n/14.4 fetchAndProcessSeedlists\T1/lmr/m/n/14.4 (-20) -
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 60--61
+
+ []
+
+
+Underfull \hbox (badness 7631) in paragraph at lines 70--71
+[]\T1/lmr/m/n/14.4 (+20) Dieser Co-de führt, so-bald das Par-sing ab-ge-schlos-
+sen ist, die
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 70--71
+
+ []
+
+
+Overfull \vbox (7.89444pt too high) has occurred while \output is active []
+
+Package babel Info: Redefining german shorthand "f
+(babel)             in language  on input line 71.
+Package babel Info: Redefining german shorthand "|
+(babel)             in language  on input line 71.
+Package babel Info: Redefining german shorthand "~
+(babel)             in language  on input line 71.
+Package babel Info: Redefining german shorthand "f
+(babel)             in language  on input line 71.
+Package babel Info: Redefining german shorthand "|
+(babel)             in language  on input line 71.
+Package babel Info: Redefining german shorthand "~
+(babel)             in language  on input line 71.
+
+[21]
+
+Package acronym Warning: Acronym `JSON' is not defined on input line 81.
+
+Package acronym Info: Label `acro:JSON' newly defined as it shall be overridden
+
+although it is yet undefined on input line 85.
+
+Package acronym Warning: Acronym `JSON' is not defined on input line 85.
+
+
+Package acronym Warning: Acronym `JSON' is not defined on input line 85.
+
+
+Package acronym Warning: Acronym `EE' is not defined on input line 85.
+
+
+Overfull \vbox (7.89444pt too high) has occurred while \output is active []
+
+Package babel Info: Redefining german shorthand "f
+(babel)             in language  on input line 86.
+Package babel Info: Redefining german shorthand "|
+(babel)             in language  on input line 86.
+Package babel Info: Redefining german shorthand "~
+(babel)             in language  on input line 86.
+Package babel Info: Redefining german shorthand "f
+(babel)             in language  on input line 86.
+Package babel Info: Redefining german shorthand "|
+(babel)             in language  on input line 86.
+Package babel Info: Redefining german shorthand "~
+(babel)             in language  on input line 86.
+
+[22]
+
+Package acronym Warning: Acronym `JSON' is not defined on input line 89.
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 91--92
+
+ []
+
+
+Overfull \vbox (7.89444pt too high) has occurred while \output is active []
+
+Package babel Info: Redefining german shorthand "f
+(babel)             in language  on input line 104.
+Package babel Info: Redefining german shorthand "|
+(babel)             in language  on input line 104.
+Package babel Info: Redefining german shorthand "~
+(babel)             in language  on input line 104.
+Package babel Info: Redefining german shorthand "f
+(babel)             in language  on input line 104.
+Package babel Info: Redefining german shorthand "|
+(babel)             in language  on input line 104.
+Package babel Info: Redefining german shorthand "~
+(babel)             in language  on input line 104.
+
+[23]
+Underfull \hbox (badness 10000) in paragraph at lines 105--106
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 123--124
+
+ []
+
+
+! LaTeX Error: Environment lstlistings undefined.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.125 \begin{lstlistings}
+                         [title=Struktur von Informationen Ã¼ber einen Komme...
+
+? 
+
+! LaTeX Error: \begin{document} ended by \end{lstlistings}.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.135 \end{lstlistings}
+                       
+? 
+
+Overfull \hbox (25.83588pt too wide) in paragraph at lines 125--136
+[]\T1/lmr/m/n/14.4 (-20) [title=Struktur von In-for-ma-tio-nen über einen Kom-m
+en-tar, lan-gua-ge=JavaScript]
+ []
+
 )
 Overfull \vbox (7.89444pt too high) has occurred while \output is active []
 
@@ -2893,7 +3099,23 @@ Package babel Info: Redefining german shorthand "|
 Package babel Info: Redefining german shorthand "~
 (babel)             in language  on input line 91.
 
-[20]
+[24]
+Overfull \vbox (7.89444pt too high) has occurred while \output is active []
+
+Package babel Info: Redefining german shorthand "f
+(babel)             in language  on input line 91.
+Package babel Info: Redefining german shorthand "|
+(babel)             in language  on input line 91.
+Package babel Info: Redefining german shorthand "~
+(babel)             in language  on input line 91.
+Package babel Info: Redefining german shorthand "f
+(babel)             in language  on input line 91.
+Package babel Info: Redefining german shorthand "|
+(babel)             in language  on input line 91.
+Package babel Info: Redefining german shorthand "~
+(babel)             in language  on input line 91.
+
+[25]
 
 LaTeX Warning: Empty bibliography on input line 95.
 
@@ -2914,7 +3136,7 @@ Package babel Info: Redefining german shorthand "|
 Package babel Info: Redefining german shorthand "~
 (babel)             in language  on input line 101.
 
-[21
+[26
 
 
 
@@ -2930,6 +3152,9 @@ Package atveryend Info: Empty hook `AtEndAfterFileList' on input line 105.
 LaTeX Warning: There were undefined references.
 
 
+LaTeX Warning: Label(s) may have changed. Rerun to get cross-references right.
+
+
 Package biblatex Warning: Please (re)run BibTeX on the file(s):
 (biblatex)                dokumentation
 (biblatex)                and rerun LaTeX afterwards.
@@ -2939,28 +3164,29 @@ Package logreq Info: Writing requests to 'dokumentation.run.xml'.
 
  ) 
 Here is how much of TeX's memory you used:
- 39619 strings out of 493323
- 714069 string characters out of 3139054
- 1428972 words of memory out of 3000000
- 41909 multiletter control sequences out of 15000+200000
- 105314 words of font info for 143 fonts, out of 3000000 for 9000
+ 39743 strings out of 493323
+ 718330 string characters out of 3139054
+ 1429077 words of memory out of 3000000
+ 41959 multiletter control sequences out of 15000+200000
+ 110025 words of font info for 148 fonts, out of 3000000 for 9000
  1145 hyphenation exceptions out of 8191
- 72i,10n,80p,8845b,3410s stack positions out of 5000i,500n,10000p,200000b,50000s
+ 72i,10n,80p,8902b,3410s stack positions out of 5000i,500n,10000p,200000b,50000s
 {C:/Program Files/MiKTeX 2.9/fonts/enc/dvips/lm/lm-ec.enc}{C:/Program Files/M
 iKTeX 2.9/fonts/enc/dvips/lm/lm-ts1.enc}<C:/Program Files/MiKTeX 2.9/fonts/type
 1/public/lm/lmbx10.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/public/lm/lmbx1
-2.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/public/lm/lmr10.pfb><C:/Program 
-Files/MiKTeX 2.9/fonts/type1/public/lm/lmr12.pfb><C:/Program Files/MiKTeX 2.9/f
-onts/type1/public/lm/lmr6.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/public/l
-m/lmr7.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/public/lm/lmri10.pfb><C:/Pr
-ogram Files/MiKTeX 2.9/fonts/type1/public/lm/lmri12.pfb><C:/Program Files/MiKTe
-X 2.9/fonts/type1/public/lm/lmro12.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1
-/public/lm/lmssbx10.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/public/lm/lmtk
-10.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/public/lm/lmtt10.pfb><C:/Progra
-m Files/MiKTeX 2.9/fonts/type1/public/lm/lmtt12.pfb>
-Output written on dokumentation.pdf (28 pages, 564275 bytes).
+2.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/public/lm/lmbxi10.pfb><C:/Progra
+m Files/MiKTeX 2.9/fonts/type1/public/lm/lmr10.pfb><C:/Program Files/MiKTeX 2.9
+/fonts/type1/public/lm/lmr12.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/publi
+c/lm/lmr6.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/public/lm/lmr7.pfb><C:/P
+rogram Files/MiKTeX 2.9/fonts/type1/public/lm/lmri10.pfb><C:/Program Files/MiKT
+eX 2.9/fonts/type1/public/lm/lmri12.pfb><C:/Program Files/MiKTeX 2.9/fonts/type
+1/public/lm/lmro12.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/public/lm/lmssb
+x10.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/public/lm/lmtk10.pfb><C:/Progr
+am Files/MiKTeX 2.9/fonts/type1/public/lm/lmtt10.pfb><C:/Program Files/MiKTeX 2
+.9/fonts/type1/public/lm/lmtt12.pfb>
+Output written on dokumentation.pdf (33 pages, 609380 bytes).
 PDF statistics:
- 521 PDF objects out of 1000 (max. 8388607)
- 221 named destinations out of 1000 (max. 500000)
- 37516 words of extra memory for PDF output out of 42996 (max. 10000000)
+ 622 PDF objects out of 1000 (max. 8388607)
+ 281 named destinations out of 1000 (max. 500000)
+ 38028 words of extra memory for PDF output out of 42996 (max. 10000000)
 

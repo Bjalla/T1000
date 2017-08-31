@@ -283,6 +283,14 @@ console.log('Bye World');
 
 In diesem Beispiel wird der Lese-Vorgang angestoßen. Während das Programm auf eine Antwort der \texttt{readFileSync} Methode wartet, wird das \texttt{'Bye World'} Log-Statement ausgeführt. Sobald die Datei komplett eingelesen ist, wird das \texttt{'Hello World'} Log-Statement ausgeführt. Im Gegensatz zum blocking Code wurde hier der Methode nicht nur ein Dateiname, sondern auch eine Funktion als Parameter mitgegeben. Diese Funktion heißt allgemein auch \textit{Callback-Funktion}. Sobald der Leseprozess abgeschlossen ist, wird diese ausgeführt.
 
+Die Schreibweise für Callbacks kann auch verkürzt werden: \\
+
+\begin{lstlisting}[title=verkürzte Schreibweise für Callbacks, language=JavaScript]
+data = fs.readFileSync('filename.txt', (err, data) => {
+	// Anweisungen
+});
+\end{lstlisting}
+
 Bei non-blocking Code sagt man auch, dass dieser \textit{asynchron} ausgeführt wird, während blocking Code \textit{synchron} arbeitet.
 
 Das Prinzip der asynchronen Abarbeitung von Code kann beliebig kompliziert angewandt werden. Problematisch wird dabei jedoch die Fehlerbehandlung und die vielen Callback-Funktionen. Aus diesem Grund gibt es \textit{Promises}. Sie ermöglichen die asynchrone Arbeitsweise und halten den Code dabei vergleichsweise einfach. Im Allgemeinen repräsentieren Promises das Ergebnis eines asynchronen Prozesses. Dabei können sie einen von drei Zuständen haben: \textit{pending} (ausstehend), \textit{fulfilled} (erfüllt) und \textit{rejected} (abgelehnt). Ihr ursprünglicher Zustand ist dabei pending. Wird eine asynchrone Operation ausgeführt, verändert sich der Status entweder zu fulfilled oder rejected. Wird einer dieser beiden Zustände erreicht, kann er für dieses Promise nicht mehr geändert werden \cite{prom}.
@@ -308,7 +316,7 @@ Das gleiche Ergebnis kann mit einfacherer Fehlerbehandlung mit Promises erreicht
 \end{lstlisting}
 
 In diesem Beispiel soll eine Datei eingelesen (\texttt{readFile}) und mit dem Ergebnis in der Konsole ausgegeben werden. Daher wird der \texttt{then}-Methode die \texttt{console.log}-Funktion als ersten Parameter mitgegeben, da diese ausgeführt werden soll, wenn das Promise fulfilled ist. Sie bearbeitet das Ergebnis von \texttt{readFile} weiter, da sie es automatisch als Parameter zugewiesen bekommt.
-Für die einfache Nutzung von Promises in Node.js wurde die Promise-Bibliothek \textit{q} entwickelt, die auch in der Erstellung dieses Projektes Anwendung findet. Sie bietet darüber hinaus viele weitere Funktionen, die den Umgang mit Promises erleichtern \cite{q}. 
+Für die einfache Nutzung von Promises in Node.js wurde die Promise-Bibliothek \textit{q} entwickelt, die auch in der Erstellung dieses Projektes Anwendung findet. Sie bietet darüber hinaus viele weitere Funktionen, die den Umgang mit Promises erleichtern. Sie enthält unter anderem Funktionen, um Promises direkt aufzulösen (\texttt{resolve}) oder abzulehnen (\texttt{reject}) \cite{q}. 
 
 Die Möglichkeit, asynchronen Funktionen zu verwenden, hilft eine Art Multithreading zu simulieren, da JavaScript dieses nicht unterstützt. Node.js ist durch die \textit{Event Loop} (Ereignis-Schleife) in der Lage, asynchrone Funktionen umzusetzen, indem gewisse Aufgaben an den Kernel abgegeben werden. Heutzutage sind die meisten Kernel fähig, mehrere Threads gleichzeitig laufen zu lassen, weshalb Node.js auch mehrere Aufgaben gleichzeitig abgeben kann. Die Event-Loop sorgt dann dafür, dass keine Aufgaben vergessen werden und so bald wie möglich weitergeführt werden.
 
