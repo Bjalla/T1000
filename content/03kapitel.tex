@@ -22,7 +22,7 @@
 
 \section{IBM Connections}
 IBM Connections ist ein Software-Produkt aus dem Hause IBM. Es bietet eine Social-Media-Plattform für firmeninterne Zwecke. Dabei hat jeder Mitarbeiter ein eigenes Profil mit Kontaktdaten und einigen Informationen zu seinem Beruf. Darüber hinaus können die Nutzer Statuseinträge verfassen sowie Blogs und Communities erstellen. \\
-\textit{Communities} sind Gruppen von Nutzern, die sich mit einem Thema beschäftigen oder für das sie sich interessieren. In den Communities können dann Informationen und Dokumente geteilt sowie Ankündigungen gemacht werden. Jeder Nutzer kann einen \textit{Blog} erstellen, in dem Beiträge zu diversen Themen oder Dokumente veröffentlicht werden. Weiterhin gibt es \textit{Wikis}, die Ansammlungen von Wissen über beispielsweise firmeninterne Prozesse sind. Unter \textit{News} sind Statuseinträge, Meinungen oder Ankündigungen von anderen Nutzern aus seinem Netzwerk zu finden. Eine weitere Teil von IBM Connections sind die Foren, in denen jeder Nutzer mit anderen eine Diskussion führen kann. \\
+\textit{Communities} sind Gruppen von Nutzern, die sich mit einem Thema beschäftigen oder für das sie sich interessieren. In den Communities können dann Informationen und Dokumente geteilt sowie Ankündigungen gemacht werden. Jeder Nutzer kann einen \textit{Blog} erstellen, in dem Beiträge zu diversen Themen oder Dokumente veröffentlicht werden. Weiterhin gibt es \textit{Wikis}, die Ansammlungen von Wissen über beispielsweise firmeninterne Prozesse sind. Unter \textit{News} sind Statuseinträge, Meinungen oder Ankündigungen von anderen Nutzern aus dem gleichen Netzwerk zu finden. Ein weiterer Teil von IBM Connections sind die Foren, in denen jeder Nutzer mit anderen eine Diskussion führen kann. \\
 Alle Komponenten können mit Stichwörtern, sogenannten \textit{Tags} versehen werden, um die Suche nach bestimmten Informationen zu erleichtern. Für die Ersteller von Blogs, Communities oder Wikis stehen statistische Informationen zu Verfügung, wie zum Beispiel die Anzahl der Besuche \cite{conn3}.
 \newpage
 
@@ -30,7 +30,7 @@ Alle Komponenten können mit Stichwörtern, sogenannten \textit{Tags} versehen w
 \section{IBM Connections Seedlists}
 IBM Connections stellt für den Abruf von Informationen sogenannte Seedlists zur Verfügung \cite{conn2}. Diese beinhalten sowohl die geschriebenen Daten und Ersteller als auch Meta-Daten wie IDs, Ratings, Anzahl der Besuche oder Tags \cite{resp}. 
 
-Wenn man sich die XML-Antwort von Connections ansieht, stellt man fest, dass diese ein XML-Dokument ist und viele Informationen bereitstellt: \\
+Wenn man sich die Antwort von Connections ansieht, stellt man fest, dass diese ein \acs{XML}-Dokument ist und viele Informationen bereitstellt: \\
 
 \noindent
 \begin{minipage}{\linewidth}
@@ -54,14 +54,14 @@ Wenn man sich die XML-Antwort von Connections ansieht, stellt man fest, dass die
 \end{lstlisting}
 \end{minipage}
 
-Hier sind unter anderem Informationen über getätigte Aktionen wie zum Beispiel ein Update (siehe Zeile 3) oder auch das Löschen sowie Informationen über die Anzahl der Besuche (Zeile 12), Tags (Zeilen 13 und 14) oder die Anzahl der Einträge und Kommentare (Zeilen 15 und 16) zu finden.
+Zu sehen sind unter anderem Informationen über getätigte Aktionen wie zum Beispiel ein Update (siehe Zeile 3) oder auch das Löschen sowie Informationen über die Anzahl der Besuche (Zeile 12), Tags (Zeilen 13 und 14) oder die Anzahl der Einträge und Kommentare (Zeilen 15 und 16).
 
 Eine Seedlist kann aus mehreren Seiten bestehen, wenn es zu viele Einträge gibt. Ist dies der Fall, so gibt es eine Folge-URL, die zur nächsten Seedlist-Seite führt. \\
 \begin{lstlisting}[title=Darstellung der Folge-URL in der Seedlist]
 <atom:link href="https://ic55felixdev.ibm-sba.com/blogs/seedlist/myserver?Action=GetDocuments&Range=100&Start=1&Source=com.ibm.ilel.seedlist.retriever.connections.blogs.BlogsRetrieverFactory&Format=atom&Locale=en_US&State=MTsxNDk3ODcyMDE0Mjg5OzA7MTUwMzMxODA1MzU1Mjt0cnVlOzA7MA%3D%3D" rel="next" type="application/atom+xml" title="Next page"/>
 \end{lstlisting}
 
-Die letzte Seite jeder Seedlist enthält keinerlei weitere Informationen und keine Folge-URLs. Stattdessen findet man dort einen codierten Timestamp, der eine Information darüber enthält, wann diese Seedlist angefordert wurde. \\
+Die letzte Seite jeder Seedlist enthält keinerlei weitere Informationen und keine Folge-URLs. Stattdessen findet man dort einen codierten Timestamp, der eine Information darüber enthält, wann diese letzte Seite angefordert wurde. \\
 
 \noindent
 \begin{minipage}{\linewidth}
@@ -86,7 +86,7 @@ Um einen Web-Crawler in Betrieb zu nehmen, benötigt dieser eine oder mehrere Au
 \newpage
 
 \section{XML und XML-Parser}
-Bei der \ac{XML} handelt es sich um einen Standard, nach dessen Vorgaben Online-Dokumente erstellt werden können. Es ist eine Unterart der \ac{SGML} \cite{xmldef}. Ein Dokument, welches mit einer Markup Language erstellt wurde, besteht aus Tags. Diese bestimmen die Art und die Formatierung eines Elements \cite{markup}. \ac{XML} heißt \textit{Extensible}, da im Gegensatz zu \ac{HTML}, einer anderen für Online-Dokumente verwendete Markup Language, eigene Tags erstellt und verwendet werden können. Solche Tags können über die Art und Formatierung hinaus auch den Sinngehalt des Inhalts festhalten \cite{xmldef}.
+Bei der \ac{XML} handelt es sich um einen Standard, nach dessen Vorgaben Online-Dokumente erstellt werden können. Es ist eine Unterart der \ac{SGML} \cite{xmldef}. Ein Dokument, welches mit einer Markup Language erstellt wurde, besteht aus Tags. Diese bestimmen die Art und die Formatierung eines Elements \cite{markup}. \ac{XML} heißt \textit{Extensible}, da im Gegensatz zur \ac{HTML}, einer anderen für Online-Dokumente verwendete Markup Language, eigene Tags erstellt und verwendet werden können. Solche Tags können über die Art und Formatierung hinaus auch den Sinngehalt des Inhalts festhalten \cite{xmldef}.
 
 So könnte die Darstellung eines Produktes mit \acs{HTML} aussehen: \\
 \begin{lstlisting}[title=Beispiel-Code HTML, language=HTML]
@@ -232,12 +232,12 @@ Das Ergebnis diese Codes ist ein JSON-Objekt, welches man weiterverarbeiten kann
 \newpage
 
 \section{Node.js und asynchrone Programmierung}
-Im Allgemeinen kann man Node.js als server-seitiges JavaScript bezeichnen. Es bietet eine Möglichkeit, JavaScript direkt auf einem Computer auszuführen, statt dies nur in einem Browser zu tun \cite{njsspec}. Darüber hinaus besitzt Node.js einige Eigenschaften, die im Folgenden etwas erläutert werden sollen.
+Node.js ist JavaScript, welches auf einem Server ausgeführt wird. Es bietet somit eine Möglichkeit, JavaScript direkt auf einem Computer auszuführen, statt dies nur in einem Browser zu tun \cite{njsspec}. Darüber hinaus besitzt Node.js einige Eigenschaften, die im Folgenden etwas erläutert werden.
 
 Ein Hilfsmittel für das Arbeiten mit Node.js ist der \textit{\ac{npm}}. Dieser ermöglicht es, sogenannte \textit{Packages} oder auch \textit{Module} im eigenen Code zu verwenden. Dafür muss zunächst der \ac{npm} installiert sein. Danach können mit dem Kommandozeilenbefehl \texttt{npm install <package name>} die einzelnen Packages installiert werden. Um diese dann zu verwenden müssen sie in der JavaScript-Datei mit dem folgenden Code hinzugefügt werden: \\
 
-\begin{lstlisting}[title=Verwendung des Filesystem-packages (fs) mit dem \texttt{require}-Befehl, language=JavaScript]
-var fs = require('fs');
+\begin{lstlisting}[title=Verwendung des Striptags-packages mit dem \texttt{require}-Befehl, language=JavaScript]
+var striptags = require('striptags');
 \end{lstlisting}
 
 Einige Packages wie das Filesystem-Package sind bereits vorinstalliert und müssen nicht mit dem \ac{npm} heruntergeladen, sondern nur mit \texttt{require} in das Programm eingebunden werden \cite{npm}.
@@ -251,7 +251,7 @@ module.exports = {
 \end{lstlisting}
 
 Node.js hat den Vorteil, dass damit \textit{non-blocking} (nicht-blockierender) Code erstellt werden kann. Das Prinzip von non-blocking Code kann auf Funktionen angewandt werden, bei denen keine JavaScript-Prozesse ausgeführt werden (z. B. Daten einlesen oder Datenbankabfragen). Da solche Prozesse vor allem bei großen Datenmengen mehrere Sekunden oder sogar Minuten brauchen können, sollten diese Art von Anfragen nicht den Programmfluss aufhalten. Wenn zum Beispiel eine große Menge an Daten aus einer Datei eingelesen werden soll, würde das Programm mit \textit{blocking} (blockierendem) Code so lange stehenbleiben, bis der Vorgang abgeschlossen ist. Erst danach würden die nachfolgenden Anweisungen ausgeführt werden.
-Mit non-blocking Code kann man den Programmablauf insgesamt beschleunigen. Das Programm wird nicht auf das Ende der Datenabfrage warten und in der Zeit die nachfolgenden Anweisungen ausführen, bis die Daten vollständig eingelesen sind \cite{njsbloc}. \\
+Mit non-blocking Code kann man den Programmablauf insgesamt beschleunigen. Das Programm wird nicht auf das Ende der Datenabfrage warten und in der Zeit andere Anweisungen ausführen, bis die Daten vollständig eingelesen sind \cite{njsbloc}. \\
 
  \begin{lstlisting}[title=Blocking Code bei dem Einlesen einer Datei, language=JavaScript]
 const fs = require('fs');
@@ -268,7 +268,7 @@ In diesem Beispiel wird zunächst die Datei eingelesen und erst danach die beide
 \begin{lstlisting}[title=Non-blocking Code beim Einlesen einer Datei, language=JavaScript]
 const fs = require('fs');
 
-data = fs.readFileSync('filename.txt', function (err, data) {
+data = fs.readFileAsync('filename.txt', function (err, data) {
 	if (err) {
 		throw err;  //Fehlerbehandlung
 	}
@@ -293,7 +293,7 @@ data = fs.readFileSync('filename.txt', (err, data) => {
 
 Bei non-blocking Code sagt man auch, dass dieser \textit{asynchron} ausgeführt wird, während blocking Code \textit{synchron} arbeitet.
 
-Das Prinzip der asynchronen Abarbeitung von Code kann beliebig kompliziert angewandt werden. Problematisch wird dabei jedoch die Fehlerbehandlung und die vielen Callback-Funktionen. Aus diesem Grund gibt es \textit{Promises}. Sie ermöglichen die asynchrone Arbeitsweise und halten den Code dabei vergleichsweise einfach. Im Allgemeinen repräsentieren Promises das Ergebnis eines asynchronen Prozesses. Dabei können sie einen von drei Zuständen haben: \textit{pending} (ausstehend), \textit{fulfilled} (erfüllt) und \textit{rejected} (abgelehnt). Ihr ursprünglicher Zustand ist dabei pending. Wird eine asynchrone Operation ausgeführt, verändert sich der Status entweder zu fulfilled oder rejected. Wird einer dieser beiden Zustände erreicht, kann er für dieses Promise nicht mehr geändert werden \cite{prom}.
+Das Prinzip der asynchronen Abarbeitung von Code kann beliebig komplex angewandt werden. Problematisch wird dabei jedoch die Fehlerbehandlung und die vielen Callback-Funktionen, da der Code sehr unübersichtlich wird. Aus diesem Grund gibt es \textit{Promises}. Sie ermöglichen die asynchrone Arbeitsweise und halten den Code dabei vergleichsweise einfach. Im Allgemeinen repräsentieren Promises das Ergebnis eines asynchronen Prozesses. Dabei können sie einen von drei Zuständen haben: \textit{pending} (ausstehend), \textit{fulfilled} (erfüllt) und \textit{rejected} (abgelehnt). Ihr ursprünglicher Zustand ist dabei pending. Wird eine asynchrone Operation ausgeführt, verändert sich der Status entweder zu fulfilled oder rejected. Wird einer dieser beiden Zustände erreicht, kann er für dieses Promise nicht mehr geändert werden \cite{prom}.
 
 Eine grundlegende Methode von Promises ist die \texttt{then}-Methode. Diese nimmt zwei Funktionen als Parameter entgegen, den ersten für den Fall, dass das Promise fulfilled wird (\textit{onFulfilled}) und den anderen für den Fall, dass es rejected wird (\textit{onRejected}). Somit werden auch Fehler abgefangen. Wird das Promise fulfilled, wird die onFulfilled-Funktion ausgeführt und das Ergebnis des Promises wird der erste Parameter dieser Funktion. Wird das Promise jedoch rejected, wird die onRejected-Funktion mit dem Grund für die Ablehnung des Promises als ersten Paramter ausgeführt \cite{proma}.
 
@@ -323,13 +323,13 @@ Die Möglichkeit, asynchronen Funktionen zu verwenden, hilft eine Art Multithrea
 Die Event-Loop kann in fünf Phasen unterteilt werden.
 
 \textbf{Timers:}\\
-In dieser Phase werden zunächst alle offenen Callbacks von Timer-Funktionen wie \texttt{setTimeout()} oder \texttt{setInterval()} abgearbeitet. Dabei ist es möglich, dass die festgelegte Dauer nicht der tatsächlichen entsrpricht. Da Node.js verschiedene Phasen durchläuft und in jeder andere Aufgaben abarbeitet, ist es möglich, dass eine solche Ereignis-Schleife in einer kürzeren Zeit als der vom Timer angesetzten komplett ist. Dann wird der Callback des Timers noch nicht ausgeführt. Jetzt ist kann es passieren, dass der nächste Durchlauf der Event Loop länger dauert und zum Beispiel bei der Hälfte die Zeit des Timers abgelaufen ist. An dieser Stelle wird Node.js nicht zur Timers-Phase zurückspringen, sondern die Event Loop zuende führen und sich im nächsten Durchlauf um die Timer kümmern. Das bedeutet, dass wenn eine Funktion einen Timer hat, der 100 ms warten soll, und danach weiterarbeiten soll, kann es sein, dass die nachfolgenden Aufgaben nicht wie gewünscht 100 ms, sondern möglicherweise 105 ms verzögert ausgeführt werden \cite{njsel}.
+In dieser Phase werden zunächst alle offenen Callbacks von Timer-Funktionen wie \texttt{setTimeout()} oder \texttt{setInterval()} abgearbeitet. Dabei ist es möglich, dass die festgelegte Dauer nicht der tatsächlichen entsrpricht. Da Node.js verschiedene Phasen durchläuft und in jeder andere Aufgaben abarbeitet, ist es möglich, dass eine solche Ereignis-Schleife in einer kürzeren Zeit als der vom Timer angesetzten komplett ist. Dann wird der Callback des Timers noch nicht ausgeführt. Jetzt kann es passieren, dass der nächste Durchlauf der Event Loop länger dauert und zum Beispiel bei der Hälfte die Zeit des Timers abgelaufen ist. An dieser Stelle wird Node.js nicht zur Timers-Phase zurückspringen, sondern die Event Loop zuende führen und sich im nächsten Durchlauf um die Timer kümmern. Das bedeutet, dass wenn eine Funktion einen Timer hat, der 100 ms warten soll, und danach weiterarbeiten soll, kann es sein, dass die nachfolgenden Aufgaben nicht wie gewünscht 100 ms, sondern möglicherweise 105 ms verzögert ausgeführt werden \cite{njsel}.
 
 \textbf{I/O Callbacks:}\\
 In der nächsten Phase werden mit einigen wenigen Ausnahmen alle Callbacks ausgeführt. Zu den Ausnahmen zählen Timer-Callbacks, Callbacks, welche zu einem \textit{close}-Event gehören sowie Callbacks der \texttt{setImmediate}-Funktion \cite{njsel}.
 
 \textbf{Poll:}\\
-Die Poll-Phase führt die Skripte aus den Timer-Funktionen aus und verarbeitet die \textit{Events} (Ereignisse), die in der Poll-Warteschlange sind. Diese werden eines nach dem anderen verarbeitet. Dabei geht Node.js nach dem \ac{FIFO} Prinzip vor, d.h. die Ereignisse werden in genau der Reihenfolge, in der sie angekommen sind, auch abgearbeitet. Sobald alle Aufgaben verarbeitet sind und damit die Warteschlange leer, prüft die Event Loop, ob Timer abgelaufen und für die nächsten Schritte bereit sind. Wenn dies der Fall ist, springt die Event Loop zur Timers-Phase zurück. Ist jedoch die Warteschlange leer, so wird abhängig davon, ob Ereignisse von \texttt{setImmediate}-Timern ausstehend sind, entweder die nächste Phase eingeleitet oder die Event Loop verharrt in der Poll-Phase undwartet auf weitere Callbacks in der Warteschlange, damit diese sofort ausgeführt werden können \cite{njsel}.
+Die Poll-Phase führt die Skripte aus den Timer-Funktionen aus und verarbeitet die \textit{Events} (Ereignisse), die in der Poll-Warteschlange sind. Diese werden eines nach dem anderen verarbeitet. Dabei geht Node.js nach dem \ac{FIFO} Prinzip vor, d.h. die Ereignisse werden in genau der Reihenfolge, in der sie angekommen sind, auch abgearbeitet. Sobald alle Aufgaben verarbeitet sind und damit die Warteschlange leer, prüft die Event Loop, ob Timer abgelaufen und für die nächsten Schritte bereit sind. Wenn dies der Fall ist, springt die Event Loop zur Timers-Phase zurück. Ist jedoch die Warteschlange leer, so wird abhängig davon, ob Ereignisse von \texttt{setImmediate}-Timern ausstehend sind, entweder die nächste Phase eingeleitet oder die Event Loop verharrt in der Poll-Phase und wartet auf weitere Callbacks in der Warteschlange, damit diese sofort ausgeführt werden können \cite{njsel}.
 
 \textbf{Check:}\\
 In der Check-Phase werden ausschließlich Callbacks von \texttt{setImmediate}-Aufrufen verarbeitet. Diese sind darauf ausgelegt, unmittelbar nach der Poll-Phase ausgeführt zu werden \cite{njsel}.
